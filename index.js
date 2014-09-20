@@ -56,6 +56,16 @@ app.get('/about', function (req, res)
     res.render('about.html');
 });
 
+app.get('/account', function (req, res)
+{
+    res.render('account.html');
+});
+
+app.get('/api', function (req, res)
+{
+    res.render('api.html');
+});
+
 app.get('/chat', function (req, res)
 {
     res.render('chat.html');
@@ -74,6 +84,11 @@ app.get('/member', function (req, res)
 app.get('/project', function (req, res){
     res.render('project.html');
 });
+
+app.get('/search', function (req, res){
+    res.render('search.html');
+});
+
 
 http.listen(app.get("port"), function(){
   console.log('listening on *:5000');
