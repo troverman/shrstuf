@@ -8,10 +8,10 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 
-/*var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOHQ_URL);
+//var mongoose = require('mongoose');
+//mongoose.connect(process.env.MONGOHQ_URL);
 
-var db = mongoose.connection;
+/*var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   // yay!
@@ -34,11 +34,11 @@ var test = new member ({
 });
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
-//database/ 
-*/
+//database/ */
+
 
 app.get('/', function(req, res) {
-    res.send("Hello World!");
+    res.render('index.html')
 });
 
 
