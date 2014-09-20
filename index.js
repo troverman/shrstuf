@@ -34,7 +34,13 @@ var test = new member ({
 test.save(function (err) {if (err) console.log ('Error on save!')});
 
 
-
+member.find({}).exec(function(err, result) {
+  if (!err) {
+    var query = PUser.find({'name.last': 'Doe'});
+  } else {
+    res.end('Error in first query. ' + err)
+  };
+});
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -46,20 +52,7 @@ app.get('/', function(request, response) {
   var times = process.env.TIMES || 100
   for (i=0; i < times; i++)
     result += cool();
-
-
-  member.find({}).exec(function(err, result) {
-    if (!err) {
-      var query = PUser.find({'name.last': 'Doe'});
-      response.send(query);
-    } else {
-      res.end('Error in first query. ' + err)
-    };
-  });
-
   response.send(test);
-
-
 });
 
 
