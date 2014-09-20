@@ -42,7 +42,8 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 //database/ */
 
 app.get('/', function(req, res) {
-    res.render('index.html')
+    //res.render('index.html')
+    response.send(process.env.MONGOHQ_URL);
 });
 
 io.on('connection', function(socket){
@@ -78,8 +79,6 @@ app.get('/project', function (req, res){
 
 http.listen(app.get("port"), function(){
   console.log('listening on *:5000');
-  console.log(process.env.MONGOHQ_URL);
-
 });
 
 
