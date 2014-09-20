@@ -67,9 +67,7 @@ app.get('/project', function (req, res){
     res.render('project.html');
 });
 
-var server = app.listen(app.get('port'), function() {
-  console.log('Listening on port %d', server.address().port);
-  http.listen(app.get("port"), function(){
+http.listen(app.get("port"), function(){
   console.log('listening on *:5000');
 });
 
