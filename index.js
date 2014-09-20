@@ -10,7 +10,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
-//database
+
 /*var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 
