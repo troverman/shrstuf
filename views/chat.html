@@ -11,26 +11,7 @@
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
     </style>
-<<<<<<< HEAD
-  </head>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-<script>
-  var socket = io();
-  $("form").submit(function(e){
-    alert();
-    e.preventDefault();
-    var $this = $(this);
-    $.post(
-      $this.attr("action"),
-      $this.serialize(),
-      function {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-      },
-      "json"
-    );
-=======
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
   <script>
@@ -39,39 +20,18 @@
   $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
     $('#m').val('');
->>>>>>> 432eb735f1b53a5cf37c8db69f066c5eddc4fa03
     return false;
   });
+
   socket.on('chat message', function(msg){
     $('#messages').append($('<li>').text(msg));
   });
-<<<<<<< HEAD
 </script>
-  <body>
-
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button id="woah">Send</button>
-=======
-
-  });
-</script>
-
-
-  </script>
-
-  </head>
-  <!--<script src="/socket.io/socket.io.js"></script>-->
-
-
-
-  
-
+</head>
   <body>
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
->>>>>>> 432eb735f1b53a5cf37c8db69f066c5eddc4fa03
     </form>
   </body>
 </html>
