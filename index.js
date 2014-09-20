@@ -51,12 +51,13 @@ app.get('/', function(request, response) {
   member.find({}).exec(function(err, result) {
     if (!err) {
       var query = PUser.find({'name.last': 'Doe'});
+      response.send(query);
     } else {
       res.end('Error in first query. ' + err)
     };
   });
 
-  response.send(query);
+  response.send(test);
 
 
 });
