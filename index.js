@@ -1,10 +1,14 @@
 var express = require('express');
 var app = express();
+
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
+
+
 var pg = require('pg');
-
-
 
 
 
@@ -35,11 +39,7 @@ var test = new member ({
 });
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
-
-
 //database
-
-
 
 
 
@@ -48,6 +48,14 @@ app.get('/', function(request, response) {
   var times = process.env.TIMES
 
   response.send(test);
+});
+
+app.get('/about', function (req, res){
+    res.render('about.html');
+});
+
+app.get('/project', function (req, res){
+    res.render('project.html');
 });
 
 app.listen(app.get('port'), function() {
