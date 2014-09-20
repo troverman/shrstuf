@@ -13,8 +13,6 @@ app.engine('html', require('ejs').renderFile);
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 
-
-
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
@@ -26,10 +24,23 @@ var memberSchema = new mongoose.Schema({
     first: String,
     last: { type: String, trim: true }
   },
-  age: { type: Number, min: 0 },
   email: String
-
+  member_name: String
 });
+
+var projectSchema = new mongoose.Schema({
+  title:  String,
+  author: String,
+});
+
+var transactionSchema = new mongoose.Schema({
+  member_send: String,
+  member_receive: String,
+  project: String,
+  currency_array: String,
+  currency_value_array:String,
+});
+
 
 var member = mongoose.model('member', memberSchema);
 var test = new member ({
@@ -37,12 +48,9 @@ var test = new member ({
   age: 25
 });
 
+
+
 test.save(function (err) {if (err) console.log ('Error on save!')});
-
-
-
-
-
 
 
 
