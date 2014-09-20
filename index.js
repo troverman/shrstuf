@@ -6,8 +6,6 @@ var io = require('socket.io')(http);
 var $ = require('jquery');
 
 
-
-
 app.use(express(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
@@ -54,9 +52,9 @@ io.on('connection', function(socket){
 });
 
 
-http.listen(5000, function(){
+/*http.listen(5000, function(){
   console.log('listening on *:5000');
-});
+});*/
 
 app.get('/about', function (req, res)
 {
