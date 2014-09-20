@@ -23,8 +23,14 @@ var memberSchema = new mongoose.Schema({
     first: String,
     last: { type: String, trim: true }
   },
-  age: { type: Number, min: 0 }
+  age: { type: Number, min: 0 },
+  email: String
+
 });
+
+
+
+
 
 var member = mongoose.model('member', memberSchema);
 var test = new member ({
@@ -35,10 +41,16 @@ var test = new member ({
 test.save(function (err) {if (err) console.log ('Error on save!')});
 //database
 
+
+
+
+
 app.get('/', function(request, response) {
   var test = process.env.MONGOHQ_URL;
   var times = process.env.TIMES
-  response.send(test);
+  var lol = db.member.find( { name: { first: 'John' } } )
+
+  response.send(lol);
 });
 
 app.listen(app.get('port'), function() {
