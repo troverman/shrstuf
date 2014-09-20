@@ -43,7 +43,7 @@ app.get('/', function(request, response) {
   /*var test = process.env.MONGOHQ_URL;
   var times = process.env.TIMES
   response.send(test);*/
-})
+});
 
 
 io.on('connection', function(socket){
@@ -52,10 +52,6 @@ io.on('connection', function(socket){
   });
 });
 
-
-http.listen(5000, function(){
-  console.log('listening on *:5000');
-});
 
 app.get('/about', function (req, res)
 {
