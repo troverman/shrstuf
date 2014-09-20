@@ -28,10 +28,6 @@ var memberSchema = new mongoose.Schema({
 
 });
 
-
-
-
-
 var member = mongoose.model('member', memberSchema);
 var test = new member ({
   name: { first: 'John', last: 'Doe'},
@@ -39,11 +35,12 @@ var test = new member ({
 });
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
+
+
 //database
 
 
 
-var lol = db.member.find( { name: { first: 'John' } } )
 
 
 app.get('/', function(request, response) {
