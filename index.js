@@ -7,8 +7,7 @@ var $ = require("jquery");
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
-app.use(express.static(__dirname + '/static'));
-
+app.use('/static', express.static(__dirname + '/static'));
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 var db = mongoose.connection;
