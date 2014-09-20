@@ -2,8 +2,35 @@ var express = require('express');
 var app = express();
 var cool = require('cool-ascii-faces');
 var pg = require('pg');
+
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  // yay!
+});
+
+var memberSchema = new mongoose.Schema({
+  name: {
+    first: String,
+    last: { type: String, trim: true }
+  },
+  age: { type: Number, min: 0 }
+});
+
+
+var member = mongoose.model('member', memberSchema);
+var test = new member ({
+  name: { first: 'John', last: '  Doe   ' },
+  age: 25
+});
+
+test.save(function (err) {if (err) console.log ('Error on save!')});
+
+
+
 
 
 app.set('port', (process.env.PORT || 5000));
