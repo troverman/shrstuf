@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var cool = require('cool-ascii-faces');
 var pg = require('pg');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 //mongoose.connect(process.env.MONGOHQ_URL);
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
