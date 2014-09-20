@@ -33,16 +33,6 @@ var test = new member ({
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
 
-
-member.find({}).exec(function(err, result) {
-  if (!err) {
-    var query = PUser.find({'name.last': 'Doe'});
-  } else {
-    res.end('Error in first query. ' + err)
-  };
-});
-
-
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
