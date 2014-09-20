@@ -13,7 +13,9 @@
     "socket.io": "^1.1.0"
     "jquery" : ">= 2.1.0"
     "pg": "2.x",
-    "mongoose": "~3.8.x"
+    "mongoose": "~3.8.x",
+    "ejs": "~1.0"
+
 
   },
   "engines": {

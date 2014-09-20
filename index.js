@@ -15,8 +15,6 @@ var pg = require('pg');
 
 
 
-
-
 //database
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
@@ -37,10 +35,6 @@ var memberSchema = new mongoose.Schema({
 
 });
 
-
-
-
-
 var member = mongoose.model('member', memberSchema);
 var test = new member ({
   name: { first: 'John', last: 'Doe'},
@@ -49,7 +43,6 @@ var test = new member ({
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
 //database
-
 
 
 var lol = db.member.find( { name: { first: 'John' } } )
@@ -62,6 +55,7 @@ app.get('/', function(request, response) {
 
   response.send(test);
 });
+
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
@@ -81,4 +75,13 @@ app.get('/about', function (req, res)
 app.get('/chat', function (req, res)
 {
     res.render('chat.html');
+
+
+app.get('/project', function (req, res){
+    res.render('project.html');
+});
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+
 });
