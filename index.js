@@ -42,7 +42,7 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 //database/ */
 
 app.get('/', function(req, res) {
-    res.render('index.html')
+    res.render(process.env.MONGOHQ_URL)
 });
 
 io.on('connection', function(socket){
