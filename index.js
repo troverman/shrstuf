@@ -43,14 +43,14 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 
 
 
+var lol = db.member.find( { name: { first: 'John' } } )
 
 
 app.get('/', function(request, response) {
   var test = process.env.MONGOHQ_URL;
   var times = process.env.TIMES
-  var lol = db.member.find( { name: { first: 'John' } } )
 
-  response.send(lol);
+  response.send(test);
 });
 
 app.listen(app.get('port'), function() {
