@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "pg": "2.x",
     "express": "~3.4.x",
     "cool-ascii-faces": "~1.3.x"
   },
@@ -22,9 +23,9 @@
     "heroku",
     "express"
   ],
-  "author": "Mark Pundsack",
+  "author": "Trevor Overman",
   "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
+    "Zeke Sikelianos <troverman@gmail.com> (http://www.troverman.com)"
   ],
   "license": "MIT"
 }
