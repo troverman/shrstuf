@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
+var $ = require("jquery");
 
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
@@ -41,7 +42,7 @@ app.get('/', function(req, res) {
     res.render('index.html')
 });
 
-
+ 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
@@ -64,8 +65,8 @@ app.get('/project', function (req, res){
     res.render('project.html');
 });
 
-var server = app.listen(app.get('port'), function() {
-    console.log('Listening on port %d', server.address().port);
+http.listen(5000, function(){
+  console.log('listening on *:5000');
 });
 
 
