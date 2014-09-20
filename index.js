@@ -3,6 +3,11 @@ var app = express();
 var cool = require('cool-ascii-faces');
 var pg = require('pg');
 
+
+
+
+
+
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 
@@ -20,10 +25,9 @@ var memberSchema = new mongoose.Schema({
   age: { type: Number, min: 0 }
 });
 
-
 var member = mongoose.model('member', memberSchema);
 var test = new member ({
-  name: { first: 'John', last: '  Doe   ' },
+  name: { first: 'John', last: 'Doe'},
   age: 25
 });
 
@@ -42,7 +46,19 @@ app.get('/', function(request, response) {
   var times = process.env.TIMES || 100
   for (i=0; i < times; i++)
     result += cool();
-  response.send(test);
+
+
+  member.find({}).exec(function(err, result) {
+    if (!err) {
+      var query = PUser.find({'name.last': 'Doe'});
+    } else {
+      res.end('Error in first query. ' + err)
+    };
+  });
+
+  response.send(query);
+
+
 });
 
 
