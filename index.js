@@ -1,14 +1,14 @@
-var express = require('express')
+var express = require('express');
 var app = express();
-var cool = require('cool-ascii-faces')
+var cool = require('cool-ascii-faces');
 var pg = require('pg');
 
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  pg.connect(process.env.MONGOHQ_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
@@ -17,18 +17,20 @@ app.get('/db', function (request, response) {
        { response.send(result.rows); }
     });
   });
-})
+});
 
 app.get('/', function(request, response) {
   var result = ''
+  var test = process.env.MONGOHQ_URL
+
   var times = process.env.TIMES || 100
   for (i=0; i < times; i++)
     result += cool();
-  response.send(result);
+  response.send(test);
 });
 
 
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
-})
+});
