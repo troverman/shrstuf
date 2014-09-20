@@ -5,23 +5,13 @@ var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
 var $ = require('jquery');
 
-<<<<<<< HEAD
-=======
-app.set('views',express.static(__dirname + '/views'));
-app.engine('html', require('ejs').renderFile);
->>>>>>> 2dee87daeb6f4466421d1318e5807dd7a894d20c
 
 app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
+app.use(express(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
-
-var pg = require('pg');
-
-
-
 //database
-var mongoose = require('mongoose');
+/*var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 
 var db = mongoose.connection;
@@ -49,16 +39,11 @@ var test = new member ({
 test.save(function (err) {if (err) console.log ('Error on save!')});
 //database
 
-
-var lol = db.member.find( { name: { first: 'John' } } )
-
-
-
 app.get('/', function(request, response) {
   var test = process.env.MONGOHQ_URL;
   var times = process.env.TIMES
   response.send(test);
-});
+});*/
 
 
 io.on('connection', function(socket){
@@ -79,13 +64,11 @@ app.get('/about', function (req, res)
 app.get('/chat', function (req, res)
 {
     res.render('chat.html');
+});
 
 
 app.get('/project', function (req, res){
     res.render('project.html');
 });
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
 
-});
