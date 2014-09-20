@@ -3,15 +3,20 @@ var app = express();
 var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
+var $ = require("jquery");
 
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
+app.use(express.static(__dirname + '/public'));
 
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
-
 var db = mongoose.connection;
+//var mongoose = require('mongoose');
+//mongoose.connect(process.env.MONGOHQ_URL);
+
+/*var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   // yay!
@@ -34,13 +39,12 @@ var test = new member ({
 });
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
-//database/ 
 
+//database/ */
 
 app.get('/', function(req, res) {
-    res.render('index.html');
+    res.render('index.html')
 });
-
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
@@ -65,7 +69,9 @@ app.get('/project', function (req, res){
 });
 
 var server = app.listen(app.get('port'), function() {
-    console.log('Listening on port %d', server.address().port);
+  console.log('Listening on port %d', server.address().port);
+  http.listen(app.get("port"), function(){
+  console.log('listening on *:5000');
 });
 
 
