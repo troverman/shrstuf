@@ -1,16 +1,13 @@
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
+var cool = require('cool-ascii-faces');
+var io = require('socket.io')(http);
 
-app.use(express.static(__dirname + '/public'));
+app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 
-
-var pg = require('pg');
-
-
-
-//database
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 
@@ -37,24 +34,38 @@ var test = new member ({
 });
 
 test.save(function (err) {if (err) console.log ('Error on save!')});
-//database
+//database/ 
 
 
-
-app.get('/', function(request, response) {
-  var test = process.env.MONGOHQ_URL;
-  var times = process.env.TIMES
-  response.send(test);
+app.get('/', function(req, res) {
+    res.render('index.html');
 });
 
-app.get('/about', function (req, res){
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
+
+
+app.get('/about', function (req, res)
+{
     res.render('about.html');
 });
+
+app.get('/chat', function (req, res)
+{
+    res.render('chat.html');
+});
+
 
 app.get('/project', function (req, res){
     res.render('project.html');
 });
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
+var server = app.listen(app.get('port'), function() {
+    console.log('Listening on port %d', server.address().port);
 });
+
+
