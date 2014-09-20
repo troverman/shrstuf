@@ -43,7 +43,7 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 
 app.get('/', function(req, res) {
     //res.render('index.html')
-    req.send(process.env.MONGOHQ_URL);
+    res.send(process.env.MONGOHQ_URL);
 });
 
 io.on('connection', function(socket){
