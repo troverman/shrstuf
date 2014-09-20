@@ -10,6 +10,7 @@
     "pg": "2.x",
     "express": "~3.4.x",
     "cool-ascii-faces": "~1.3.x"
+    "mongoose": "~3.8.x"
   },
   "engines": {
     "node": "0.10.x"
