@@ -7,10 +7,17 @@
     "start": "node index.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "cool-ascii-faces": "~1.3.x",
     "express": "~3.4.x",
     "socket.io": "^1.1.0"
     "jquery" :  ">= 2.1.0"
+=======
+    "pg": "2.x",
+    "express": "~3.4.x",
+    "cool-ascii-faces": "~1.3.x",
+    "mongoose": "~3.8.x"
+>>>>>>> 8c888523b21a15a35bd1c9e0f3dbd7af3421ec0a
   },
   "engines": {
     "node": "0.10.x"
@@ -24,9 +31,9 @@
     "heroku",
     "express"
   ],
-  "author": "Mark Pundsack",
+  "author": "Trevor Overman",
   "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
+    "Zeke Sikelianos <troverman@gmail.com> (http://www.troverman.com)"
   ],
   "license": "MIT"
 }
