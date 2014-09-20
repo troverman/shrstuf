@@ -7,12 +7,9 @@ var pg = require('pg');
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-
-
 app.get('/', function(request, response) {
   var result = '';
   var test = process.env.MONGOHQ_URL;
-
   var times = process.env.TIMES || 100
   for (i=0; i < times; i++)
     result += cool();
