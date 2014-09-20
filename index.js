@@ -40,9 +40,7 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 */
 
 app.get('/', function(request, response) {
-  /*var test = process.env.MONGOHQ_URL;
-  var times = process.env.TIMES
-  response.send(test);*/
+  res.render(cool());
 });
 
 
