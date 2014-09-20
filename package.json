@@ -7,24 +7,14 @@
     "start": "node index.js"
   },
   "dependencies": {
-<<<<<<< HEAD
 
-=======
->>>>>>> 432eb735f1b53a5cf37c8db69f066c5eddc4fa03
     "cool-ascii-faces": "~1.3.x",
     "express": "~3.4.x",
     "socket.io" : "^1.1.0",
     "mongoose" : "~3.8.x",
     "ejs": "~1.0",
-<<<<<<< HEAD
     "jquery" :">=2.1.0",
     "pg": "2.x"
-
-
-=======
-    "jquery" :"~2.1.1",
-    "pg": "2.x"
->>>>>>> 432eb735f1b53a5cf37c8db69f066c5eddc4fa03
   },
   "engines": {
     "node": "0.10.x"

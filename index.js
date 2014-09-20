@@ -4,7 +4,6 @@ var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
 var $ = require("jquery");
-
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
