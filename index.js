@@ -62,6 +62,15 @@ app.get('/chat', function (req, res)
     res.render('chat.html');
 });
 
+app.get('/discover', function (req, res)
+{
+    res.render('discover.html');
+});
+
+app.get('/member', function (req, res)
+{
+    res.render('member.html');
+});
 
 app.get('/project', function (req, res){
     res.render('project.html');
