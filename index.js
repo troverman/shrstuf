@@ -5,6 +5,11 @@ var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
 var $ = require('jquery');
 
+<<<<<<< HEAD
+=======
+app.set('views',express.static(__dirname + '/views'));
+app.engine('html', require('ejs').renderFile);
+>>>>>>> 2dee87daeb6f4466421d1318e5807dd7a894d20c
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
@@ -52,7 +57,6 @@ var lol = db.member.find( { name: { first: 'John' } } )
 app.get('/', function(request, response) {
   var test = process.env.MONGOHQ_URL;
   var times = process.env.TIMES
-
   response.send(test);
 });
 
