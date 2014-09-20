@@ -1,5 +1,4 @@
 var express = require('express');
-var logfmt = require("logfmt");
 var app = express();
 var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
