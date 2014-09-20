@@ -19,7 +19,7 @@ db.once('open', function callback () {
   // yay!
 });
 
-var memberSchema = new mongoose.Schema({
+/*var memberSchema = new mongoose.Schema({
   name: {
     first: String,
     last: { type: String, trim: true }
@@ -50,7 +50,7 @@ var test = new member ({
 
 
 
-test.save(function (err) {if (err) console.log ('Error on save!')});
+test.save(function (err) {if (err) console.log ('Error on save!')});*/
 
 
 
