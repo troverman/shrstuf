@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.set('views', __dirname + '/views');
+app.set('views',express.static(__dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 
 app.set('port', (process.env.PORT || 5000));
@@ -46,7 +46,6 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 app.get('/', function(request, response) {
   var test = process.env.MONGOHQ_URL;
   var times = process.env.TIMES
-
   response.send(test);
 });
 
