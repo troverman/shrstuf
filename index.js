@@ -1,12 +1,11 @@
 var express = require('express');
+var logfmt = require("logfmt");
 var app = express();
 var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
-var $ = require('jquery');
 
-
-app.use(express(__dirname + '/public'));
+app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 
@@ -39,8 +38,8 @@ test.save(function (err) {if (err) console.log ('Error on save!')});
 //database/ 
 */
 
-app.get('/', function(request, response) {
-  res.render(cool());
+app.get('/', function(req, res) {
+    res.send("Hello World!");
 });
 
 
@@ -55,6 +54,7 @@ app.get('/about', function (req, res)
 {
     res.render('about.html');
 });
+
 app.get('/chat', function (req, res)
 {
     res.render('chat.html');
@@ -63,6 +63,10 @@ app.get('/chat', function (req, res)
 
 app.get('/project', function (req, res){
     res.render('project.html');
+});
+
+var server = app.listen(app.get('port'), function() {
+    console.log('Listening on port %d', server.address().port);
 });
 
 
