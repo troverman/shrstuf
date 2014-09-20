@@ -8,6 +8,7 @@ var $ = require("jquery");
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
+app.use(express.static(__dirname + '/public'));
 
 //var mongoose = require('mongoose');
 //mongoose.connect(process.env.MONGOHQ_URL);
@@ -65,7 +66,7 @@ app.get('/project', function (req, res){
     res.render('project.html');
 });
 
-http.listen(5000, function(){
+http.listen(app.get("port"), function(){
   console.log('listening on *:5000');
 });
 
