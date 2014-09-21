@@ -8,7 +8,7 @@ var io = require('socket.io')(http);
 var $ = require("jquery");
 var passport = require('passport');
 var server = http.createServer(function(req, res) {
-    var filePath = __dirname + '/sample.html';
+    var filePath = __dirname + '/views';
     var template = fs.readFileSync(filePath, 'utf8');
     res.end(ejs.render(template,{}));
 });
