@@ -2,12 +2,12 @@ module.exports = function(app, passport) {
 
 
 app.get('/', function(req, res) {
-    res.render('../views/index.ejs');
+    res.render(index);
 });
 
 app.get('/about', function (req, res)
 {
-    res.render('about');
+    res.render(about);
 });
 
 app.get('/account', function (req, res)
