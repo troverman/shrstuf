@@ -19,12 +19,12 @@ db.once('open', function callback () {
   // yay!
 });
 
-/*var memberSchema = new mongoose.Schema({
+var memberSchema = new mongoose.Schema({
   name: {
     first: String,
     last: { type: String, trim: true }
   },
-  email: String
+  email: String,
   member_name: String
 });
 
@@ -43,6 +43,7 @@ var transactionSchema = new mongoose.Schema({
 
 
 var member = mongoose.model('member', memberSchema);
+
 var test = new member ({
   name: { first: 'John', last: 'Doe'},
   age: 25
@@ -50,7 +51,7 @@ var test = new member ({
 
 
 
-test.save(function (err) {if (err) console.log ('Error on save!')});*/
+test.save(function (err) {if (err) console.log ('Error on save!')});
 
 
 

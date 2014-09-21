@@ -11,6 +11,13 @@
   </head>
 <script>
   var socket = io();
+  $( document ).ready(function() {
+  $('modalToggle').click(function(){
+    $('#myModal').modal();
+
+  alert(process.env.MONGOHQ_URL);
+  });
+
 </script>
   <body>
   	<div class="site-wrapper">
@@ -26,7 +33,49 @@
               </ul>
             </div>
           </div>
+          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">Create a User!</div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5"> <h1 align="left">Information</h1>
+                            </div>
+                            <div class="col-md-2"> <
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+          </div> 
           <div class="inner cover">
             <h1 class="cover-heading">member</h1>
             <p class="lead">member projects</p>
@@ -35,7 +84,7 @@
           	<p class="lead">member feed<p>
 
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">click the button <i class=""></i></a>
+              <a href="#" class="btn btn-lg btn-default" id="modalToggle">click the button </a>
             </p>
           </div>
 
