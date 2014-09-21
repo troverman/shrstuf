@@ -46,17 +46,17 @@ function testFields() {
  }
   var socket = io();
   $( document ).ready(function() {
-    $("#inputFirst").change(function() {
+    $("#inputFirst").click(function() {
       alert();
       testFields();
     });
-    $("#inputLast").change(function() {
+    $("#inputLast").focus(function() {
       testFields();
     }); 
-    $("#inputEmail").change(function() {
+    $("#inputEmail").focus(function() {
       testFields();
     }); 
-    $("#inputPass").change(function() {
+    $("#inputPass").focus(function() {
       testFields();
     });  
   
