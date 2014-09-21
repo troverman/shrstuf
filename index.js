@@ -8,9 +8,12 @@ var io = require('socket.io')(http);
 var $ = require("jquery");
 var passport = require('passport');
 var server = http.createServer(function(req, res) {
-    var dirPath = __dirname + '/views';
-    var template = res.send(dirPath.toString("utf8"));
-    res.end(ejs.render(template,{}));
+});
+var req = http.request(options, function(res) {
+   var dirPath = __dirname + '/views';
+   res.send(data.toString("utf8"));
+  res.end(ejs.render(template,{}));
+ 
 });
 
 
