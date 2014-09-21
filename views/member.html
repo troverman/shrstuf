@@ -45,15 +45,14 @@ function sleep(milliseconds) {
   $( document ).ready(function() {
   while(true) {
    var x = 1;
-   self.alert();
-   $("form-control").each(function() {
+   $("").each(function() {
     if($(this).val() === "") {
       var x = 0;
     }
     if (x == 1) {
       $("Submit").removeAttr("disabled");
     }
-    sleep(3000);
+    sleep(40000);
   }); 
   }
 
