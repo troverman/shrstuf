@@ -10,9 +10,9 @@ var passport = require('passport');
 app.use('/static', express.static(__dirname + '/static'));
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
-app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 var mongoose = require('mongoose');
-var configDB = require('./config/database.js')
+var configDB = require('/config/database.js')
 mongoose.connect(process.env.MONGOHQ_URL);
 
 var db = mongoose.connection;
