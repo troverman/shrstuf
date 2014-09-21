@@ -12,7 +12,7 @@
 <script>
   var socket = io();
   $( document ).ready(function() {
-  $('#modalToggle').click(function(){
+  $('button:first').click(function(){
     $('#myModal').modal();
 
   alert(process.env.MONGOHQ_URL);
@@ -85,7 +85,7 @@
           	<p class="lead">member feed<p>
 
             <p class="lead">
-              <button class="btn btn-lg btn-default" id="modalToggle">click the button </button>
+              <button class="btn btn-lg btn-default">click the button </button>
             </p>
           </div>
 
