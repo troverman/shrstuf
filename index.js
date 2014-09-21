@@ -61,7 +61,6 @@ var config_opts = {
     'client_secret': 'EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TM'
 };
 
-
 var create_payment_json = {
     "intent": "sale",
     "payer": {
@@ -79,7 +78,6 @@ var create_payment_json = {
         "description": "This is the payment description."
     }]
 };
-
 
 paypal_api.payment.create(create_payment_json, config_opts, function (err, res) {
     if (err) {
