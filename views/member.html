@@ -11,12 +11,6 @@
 
   </head>
 <style>
-#grad {
-  background: -webkit-linear-gradient(left,rgba(0,255,0,0),rgba(0,255,0,1)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(right,rgba(0,255,0,0),rgba(0,255,0,1)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(right,rgba(0,255,0,0),rgba(0,255,0,1)); /*Fx 3.6-15*/
-  background: linear-gradient(to right, rgba(0,255,0,0), rgba(0,255,0,1)); /*Standard*/
-}
 .container {
     position: relative;
     width: 600px;
@@ -37,11 +31,11 @@
 }
 </style>
 <script>
-var x = 1;
-  $('#myModal').modal()  
-  var socket = io();
-  $( document ).ready(function() {
-  $(":input").each(function() {
+
+function testFields() {
+  alert();
+  var x = 1;
+   $(":input").each(function() {
     if($(this).val() === "") {
       var x = 0;
     }
@@ -49,10 +43,18 @@ var x = 1;
       $("Submit").removeAttr("disabled");
     }
   });  
+ }
+  var socket = io();
+  $( document ).ready(function() {
+  $( ":input").each(function()  {
+    $(this).change(function() {
+      testFields();
+    }); 
+  });
   $("#Submit").click(function event) {
     $("#BigForm").submit();
   }
-  $("#BigForm").submit(function(event)) {
+  $("#BigForm").submit(function(event) {
     var NewMember = new member({
       name: {
         first: $("#inputFirst").val;
@@ -60,13 +62,12 @@ var x = 1;
       }
       email: $("#inputEmail").val;
       password: $("#inputPass").val
-    })
-  }
+    });
   });
 });
 
 </script>
-  <body style="background-color:#grad;">
+  <body style="background-color:green;">
   	<div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
