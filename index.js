@@ -93,56 +93,13 @@ paypal_api.payment.create(create_payment_json, config_opts, function (err, res) 
     }
 });
 
-
-app.get('/', function(req, res) {
-    res.render('index.html')
-});
+require('./app/routes.js')(app, passport);
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   });
 });
-
-
-app.get('/about', function (req, res)
-{
-    res.render('about.html');
-});
-
-app.get('/account', function (req, res)
-{
-    res.render('account.html');
-});
-
-app.get('/api', function (req, res)
-{
-    res.render('api.html');
-});
-
-app.get('/chat', function (req, res)
-{
-    res.render('chat.html');
-});
-
-app.get('/discover', function (req, res)
-{
-    res.render('discover.html');
-});
-
-app.get('/member', function (req, res)
-{
-    res.render('member.html');
-});
-
-app.get('/project', function (req, res){
-    res.render('project.html');
-});
-
-app.get('/search', function (req, res){
-    res.render('search.html');
-});
-
 
 http.listen(app.get("port"), function(){
   console.log('listening on *:5000');
