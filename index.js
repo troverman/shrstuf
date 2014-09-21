@@ -19,16 +19,6 @@ db.once('open', function callback () {
   // yay!
 });
 
-
-var test = new member ({
-  name: { first: 'John', last: 'Doe'},
-  age: 25
-});
-
-
-
-test.save(function (err) {if (err) console.log ('Error on save!')});
-
 var paypal_api = require('paypal-rest-sdk');
 
 var config_opts = {
