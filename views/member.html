@@ -26,7 +26,7 @@
     opacity: 0.9;
 }
 
-.form-group {
+.form-yo {
     width 250px;
 }
 </style>
@@ -45,31 +45,17 @@ function sleep(milliseconds) {
   $( document ).ready(function() {
   while(true) {
    var x = 1;
-   self.alert();
-   $("form-control").each(function() {
+   $("").each(function() {
     if($(this).val() === "") {
       var x = 0;
     }
     if (x == 1) {
       $("Submit").removeAttr("disabled");
     }
-    sleep(3000);
+    sleep(40000);
   }); 
   }
-    $("form-group").click(function() {
-      alert();
-      testFields();
-    });
-    $("#inputLast").focus(function() {
-      testFields();
-    }); 
-    $("#inputEmail").focus(function() {
-      testFields();
-    }); 
-    $("#inputPass").focus(function() {
-      testFields();
-    });  
-  
+
   $("#Submit").click(function( event) {
     $("#BigForm").submit();
   });
@@ -81,6 +67,9 @@ function sleep(milliseconds) {
       },
       email: $("#inputEmail").val,
       password: $("#inputPass").val,
+    });
+    NewMember.save(function (err, NewMember) {
+      if (err) return console.error(err);
     });
   });
 });
@@ -103,28 +92,28 @@ function sleep(milliseconds) {
                     <br />
                     <br />
                     <br />
-                    <div class="form-group">
-                    <label for="inputFirst" class="col-sm-3 control-label">First Name:     
+                    <div class="form-yo">
+                    <label class="col-sm-3">First Name:     
                      </label>
                     <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputFirst" placeholder="First Name">
+                    <input type="email"  id="inputFirst" placeholder="First Name">
                     </div>
                     </div>
                     <br />
 
-                    <div class="form-group">
-                    <label for="inputLast" class="col-sm-3 control-label"> 
+                    <div class="form-yo">
+                    <label  class="col-sm-3"> 
                     Last Name:   
                      </label>
                     <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputLast" placeholder="Last Name">
+                    <input type="email" id="inputLast" placeholder="Last Name">
                     </div>
                     </div>
                     <br />
 
 
-                    <div class="form-group" >
-                    <label for="inputEmail" class="col-sm-3 control-label"> Email:      
+                    <div class="form-yo" >
+                    <label  class="col-sm-3"> Email:      
                      </label>
                     <div class="col-sm-9">
                     <input type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -133,11 +122,11 @@ function sleep(milliseconds) {
                     <br />
 
 
-                    <div class="form-group" >
-                    <label for="inputPass" class="col-sm-3 control-label"> Password:     
+                    <div class="form-yo" >
+                    <label class="col-sm-3"> Password:     
                      </label>
                     <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputPass" placeholder="Password">
+                    <input type="email" id="inputPass" placeholder="Password">
                     </div>
                     </div>
                     <br />
