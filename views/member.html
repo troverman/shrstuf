@@ -45,7 +45,7 @@ function sleep(milliseconds) {
   $( document ).ready(function() {
   while(true) {
    var x = 1;
-   $("").each(function() {
+   $(":input").each(function() {
     if($(this).val() === "") {
       var x = 0;
     }
