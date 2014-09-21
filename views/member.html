@@ -46,11 +46,19 @@ function testFields() {
  }
   var socket = io();
   $( document ).ready(function() {
-  $( ":input").each(function()  {
-    $(this).change(function() {
+    $("#inputFirst").change(function() {
+      testFields();
+    });
+    $("#inputLast").change(function() {
       testFields();
     }); 
-  });
+    $("#inputEmail").change(function() {
+      testFields();
+    }); 
+    $("#inputPass").change(function() {
+      testFields();
+    });  
+  
   $("#Submit").click(function event) {
     $("#BigForm").submit();
   }
@@ -67,7 +75,7 @@ function testFields() {
 });
 
 </script>
-  <body style="background-color:green;">
+  <body style="background-color:green; opacity: 85;">
   	<div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
