@@ -9,6 +9,14 @@
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
   </head>
+<style>
+.container {
+background-color: #D4D4D4;
+margin: 0px auto;
+padding-right:24px;
+padding-left:24px;
+}
+</style>
 <script>
   $('#myModal').modal()  
   var socket = io();
@@ -42,33 +50,33 @@
                 <div class="row">
                 <div class="col-md 8">
                     <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label"> First Name:     
+                    <div class="form-group" align="left">
+                    <label for="inputEmail3" class="control-label"> First Name:     
                      </label>
-                    <div class="col-sm-5">
+                    <div>
                     <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
                     </div>
                     </div>
                     </div>
                     <br />
 
-                    <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label"> 
+                    <form class="form-horizontal" role="form" align="left">
+                    <div class="form-group" align="left">
+                    <label for="inputEmail3" class="control-label"> 
                     Last Name:   
                      </label>
-                    <div class="col-sm-5">
+                    <div>
                     <input type="email" class="form-control" id="inputEmail3" placeholder="Last Name">
                     </div>
                     </div>
                     </div>
                     <br />
 
-                    <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label"> Email:      
+                    <form class="form-horizontal" role="form" align="left">
+                    <div class="form-group" align="left">
+                    <label for="inputEmail3" class="control-label"> Email:      
                      </label>
-                    <div class="col-sm-5">
+                    <div>
                     <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
                     </div>
                     </div>
@@ -76,10 +84,10 @@
                     <br />
 
                     <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label"> Password:     
+                    <div class="form-group" align="left">
+                    <label for="inputEmail3" class="control-label"> Password:     
                      </label>
-                    <div class="col-sm-5">
+                    <div>
                     <input type="email" class="form-control" id="inputEmail3" placeholder="Password">
                     </div>
                     </div>
