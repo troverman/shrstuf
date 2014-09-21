@@ -1,27 +1,16 @@
 var express = require('express');
 var app = express();
-var http = require('http');
-var ejs = require('ejs');
+var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
-var fs = require('fs')
 var io = require('socket.io')(http);
 var $ = require("jquery");
-var passport = require('passport');
-var server = http.createServer(function(req, res) {
-});
-var req = http.request("http://api.hostip.info/get_json.php", function(res) {
-   var dirPath = __dirname + '/views';
-   res.send(data.toString("utf8"));
-  res.end(ejs.render(template,{}));
- 
-});
 
 
 app.use('/static', express.static(__dirname + '/static'));
 app.set('port', (process.env.PORT || 5000));
-app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
 var mongoose = require('mongoose');
-var configDB = require('./config/database.js')
 mongoose.connect(process.env.MONGOHQ_URL);
 
 var db = mongoose.connection;
@@ -29,6 +18,16 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   // yay!
 });
+
+
+var test = new member ({
+  name: { first: 'John', last: 'Doe'},
+  age: 25
+});
+
+
+
+test.save(function (err) {if (err) console.log ('Error on save!')});
 
 var paypal_api = require('paypal-rest-sdk');
 
@@ -69,7 +68,6 @@ paypal_api.payment.create(create_payment_json, config_opts, function (err, res) 
 });
 
 require('./app/routes.js')(app, passport);
-require('./config/passport')(passport);
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
@@ -77,7 +75,7 @@ io.on('connection', function(socket){
   });
 });
 
-server.listen(app.get("port"), function(){
+http.listen(app.get("port"), function(){
   console.log('listening on *:5000');
 });
 
