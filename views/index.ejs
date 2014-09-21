@@ -120,7 +120,7 @@
           	<div style="margin-left:25%;margin-right:25%;">
 	          	<h1>giving is receiving</h1>
               <% var richGuys = JSON.stringify(transactions.sort(value, 1).limit(12)) %>
-              <%var richerGuys[] = JSON.parse(richGuys)%>
+              <%var richerGuys = JSON.parse(richGuys)%>
 	          	<table class="table table-striped">
                 <thead>
                     <tr>
