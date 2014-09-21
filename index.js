@@ -25,7 +25,9 @@ var memberSchema = new mongoose.Schema({
     last: { type: String, trim: true }
   },
   email: String,
-  member_name: String
+  password: String,
+  give: String,
+  take: String,
 });
 
 var projectSchema = new mongoose.Schema({
