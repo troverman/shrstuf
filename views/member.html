@@ -31,22 +31,32 @@
 }
 </style>
 <script>
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+  self = this;
 
-function testFields() {
-  
-  var x = 1;
-   $(":input").each(function() {
+  var socket = io();
+  $( document ).ready(function() {
+  while(true) {
+   var x = 1;
+   self.alert();
+   $("form-control").each(function() {
     if($(this).val() === "") {
       var x = 0;
     }
     if (x == 1) {
       $("Submit").removeAttr("disabled");
     }
+    sleep(3000);
   });  
  }
-  var socket = io();
-  $( document ).ready(function() {
-    $("#inputFirst").click(function() {
+    $("form-group").click(function() {
       alert();
       testFields();
     });
@@ -60,9 +70,9 @@ function testFields() {
       testFields();
     });  
   
-  $("#Submit").click(function event) {
+  $("#Submit").click(function( event) {
     $("#BigForm").submit();
-  }
+  });
   $("#BigForm").submit(function(event) {
     var NewMember = new member({
       name: {
