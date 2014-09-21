@@ -16,7 +16,7 @@
     "ejs": "~1.0",
     "jquery" :">=2.1.0",
     "pg": "2.x",
-    "paypal-rest-sdk": "1.0",
+    "paypal-rest-sdk": "~1.0"
   },
   "engines": {
     "node": "0.10.x"
