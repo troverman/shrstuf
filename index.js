@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var ejs = require('ejs');
 var cool = require('cool-ascii-faces');
+var fs = require('fs')
 var io = require('socket.io')(http);
 var $ = require("jquery");
 var passport = require('passport');
