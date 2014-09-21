@@ -4,6 +4,7 @@ var http = require('http').Server(app);
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
 var $ = require("jquery");
+var passport = require('passport');
 
 
 app.use('/static', express.static(__dirname + '/static'));
@@ -18,42 +19,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   // yay!
 });
-
-var memberSchema = new mongoose.Schema({
-  name: {
-    first: String,
-    last: { type: String, trim: true }
-  },
-  email: String,
-  password: String,
-  give: String,
-  take: String,
-});
-
-var projectSchema = new mongoose.Schema({
-  title:  String,
-  author: String,
-});
-
-var transactionSchema = new mongoose.Schema({
-  member_send: String,
-  member_receive: String,
-  project: String,
-  currency_array: String,
-  currency_value_array:String,
-});
-
-
-var member = mongoose.model('member', memberSchema);
-
-var test = new member ({
-  name: { first: 'John', last: 'Doe'},
-  age: 25
-});
-
-
-
-test.save(function (err) {if (err) console.log ('Error on save!')});
 
 var paypal_api = require('paypal-rest-sdk');
 
