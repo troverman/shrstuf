@@ -1,12 +1,17 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
+var http = require('http');
 var ejs = require('ejs');
 var cool = require('cool-ascii-faces');
 var fs = require('fs')
 var io = require('socket.io')(http);
 var $ = require("jquery");
 var passport = require('passport');
+var server = http.createServer(function(req, res) {
+    var filePath = __dirname + '/sample.html';
+    var template = fs.readFileSync(filePath, 'utf8');
+    res.end(ejs.render(template,{}));
+});
 
 
 app.use('/static', express.static(__dirname + '/static'));
