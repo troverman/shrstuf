@@ -33,6 +33,7 @@
 <script>
 
 function testFields() {
+  alert();
   var x = 1;
    $(":input").each(function() {
     if($(this).val() === "") {
@@ -53,7 +54,7 @@ function testFields() {
   $("#Submit").click(function event) {
     $("#BigForm").submit();
   }
-  $("#BigForm").submit(function(event)) {
+  $("#BigForm").submit(function(event) {
     var NewMember = new member({
       name: {
         first: $("#inputFirst").val;
@@ -61,8 +62,7 @@ function testFields() {
       }
       email: $("#inputEmail").val;
       password: $("#inputPass").val
-    })
-  }
+    });
   });
 });
 
