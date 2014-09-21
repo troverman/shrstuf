@@ -1,10 +1,11 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
+var http = require('http');
 var passport = require('passport');
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
 var $ = require("jquery");
+var server = http.createServer(app);
 
 
 app.use('/static', express.static(__dirname + '/static'));
