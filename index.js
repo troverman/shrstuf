@@ -9,7 +9,7 @@ var passport = require('passport');
 
 app.use('/static', express.static(__dirname + '/static'));
 app.set('port', (process.env.PORT || 5000));
-app.set('views', '../views');
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 var mongoose = require('mongoose');
 var configDB = require('./config/database.js')
@@ -59,7 +59,7 @@ paypal_api.payment.create(create_payment_json, config_opts, function (err, res) 
     }
 });
 
-require('./app/routes.js')(app, passport);
+require('./routes.js')(app, passport);
 require('./config/passport')(passport);
 
 io.on('connection', function(socket){
