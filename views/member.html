@@ -10,15 +10,26 @@
 	<script src="/socket.io/socket.io.js"></script>
   </head>
 <script>
+  $('#myModal').modal()  
   var socket = io();
+  $( document ).ready(function() {
+  $('button:first').click(function(){
+  $('#myModal').modal('show') 
+  });
+});
 </script>
   <body style="background-color:#408C4B;">
   	<div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="masthead clearfix">
-            <div class="inner">
+            <div class="row">
+              <div class="col-md-4">
               <a href="/"><h3 class="masthead-brand">giving</h3><h3 class="masthead-brand" style="color:#B0B0B0" >for</h3></a>
+              </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
               <ul class="nav masthead-nav">
                 <li><a href="/about/">member name</a></li>
                 <li class="active"><a href="/discover/">cool</a></li>
@@ -26,18 +37,65 @@
               </ul>
             </div>
           </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">member</h1>
-            <p class="lead">member projects</p>
-            <p class="lead">member $$$</p>
-            <p class="lead">member followers<p>
-          	<p class="lead">member feed<p>
-
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">click the button <i class=""></i></a>
-            </p>
           </div>
+          <div class="jumbtron">
+                <div class="container">
+                    <div class="container-header">Create a User!</div>
+                    <div class="container-body">
+                    <div class="row">
+                    <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label"> Email     
+                     </label>
+                    <div class="col-sm-6">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label"> Email     
+                     </label>
+                    <div class="col-sm-6">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label"> Email     
+                     </label>
+                    <div class="col-sm-6">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label"> Email     
+                     </label>
+                    <div class="col-sm-6">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+          </div> 
+        </div>
 
           <div class="mastfoot">
             <div class="inner">
