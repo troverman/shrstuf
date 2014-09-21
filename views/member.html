@@ -8,8 +8,15 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
+
   </head>
 <style>
+#grad {
+  background: -webkit-linear-gradient(left,rgba(0,255,0,0),rgba(0,255,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(0,255,0,0),rgba(0,255,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(0,255,0,0),rgba(0,255,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(0,255,0,0), rgba(0,255,0,1)); /*Standard*/
+}
 .container {
     position: relative;
     width: 600px;
@@ -19,7 +26,7 @@
     margin-right: auto;
     padding-top: 10px;
     padding-right: 50px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     padding-left: 50px;
     border:5px solid #FFFFFF;
     opacity: 0.9;
@@ -68,8 +75,10 @@
           </div>
           </div>
                 <div class="container">
-                    <h4 class="masthead-brand">Registration</h4><br />
+                    <h4 class="masthead-brand" align="left">Registration</h4><br />
                     <form class="form-horizontal" id="BigForm" role="form">
+                    <br />
+                    <br />
                     <br />
                     <div class="form-group">
                     <label for="inputFirst" class="col-sm-3 control-label">First Name:     
