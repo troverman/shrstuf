@@ -2,7 +2,7 @@ module.exports = function(app, passport) {
 
 
 app.get('/', function(req, res) {
-    res.render('index.html')
+    res.render('index.ejs')
 });
 
 app.get('/about', function (req, res)
@@ -42,6 +42,8 @@ app.get('/project', function (req, res){
 app.get('/search', function (req, res){
     res.render('search.html');
 });
+
+
 
 	// process the signup form
 app.post('/signup', passport.authenticate('local-signup', {
