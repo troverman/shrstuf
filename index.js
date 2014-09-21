@@ -9,7 +9,7 @@ var $ = require("jquery");
 var passport = require('passport');
 var server = http.createServer(function(req, res) {
 });
-var req = http.request(options, function(res) {
+var req = http.request( function(res) {
    var dirPath = __dirname + '/views';
    res.send(data.toString("utf8"));
   res.end(ejs.render(template,{}));
