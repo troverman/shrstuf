@@ -15,8 +15,6 @@ var server = http.createServer(function(req, res) {
 
 app.use('/static', express.static(__dirname + '/static'));
 app.set('port', (process.env.PORT || 5000));
-var template = fs.readFileSync(filePath, 'utf8');
-res.end(ejs.render(template,{}));
 app.set('view engine', 'ejs');
 var mongoose = require('mongoose');
 var configDB = require('./config/database.js')
