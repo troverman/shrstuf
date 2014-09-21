@@ -38,7 +38,7 @@ function sleep(milliseconds) {
       break;
     }
   }
-}
+};
   self = this;
 
   var socket = io();
@@ -54,8 +54,8 @@ function sleep(milliseconds) {
       $("Submit").removeAttr("disabled");
     }
     sleep(3000);
-  });  
- }
+  }); 
+  }
     $("form-group").click(function() {
       alert();
       testFields();
@@ -78,12 +78,12 @@ function sleep(milliseconds) {
       name: {
         first: $("#inputFirst").val,
         last: $("#inputLast").val,
-      }
-      email: $("#inputEmail").val;
+      },
+      email: $("#inputEmail").val,
       password: $("#inputPass").val,
     });
   });
-
+});
 </script>
   <body style="background-color:green; opacity: 85;">
   	<div class="site-wrapper">
@@ -146,9 +146,8 @@ function sleep(milliseconds) {
                   </div>
 
                 </div>
-
-          </div> 
-        </div>
+                </div>
+          
 
           <div class="mastfoot">
             <div class="inner">
@@ -156,11 +155,8 @@ function sleep(milliseconds) {
             </div>
           </div>
 
-        </div>
 
       </div>
-
-    </div>
 
   </body>
 </html>
