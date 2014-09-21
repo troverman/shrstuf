@@ -12,6 +12,20 @@
   </head>
 <script>
   var socket = io();
+
+ for (var i = 0; i < 15; i++) {
+  var cooltransaction = new transactions({
+    member_send: "Bill",
+    member_receive: "Steve",
+    project: "Microsoft",
+    currency_array: "1000",
+    currency_value_array: "1000",
+    value : 1000.0,
+  });
+    .save(function (err, cooltranscation) {
+      if (err) return console.error(err);
+  });
+  };
 </script>
 
   <body style="background-color:#408C4B;">
