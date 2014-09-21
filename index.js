@@ -59,7 +59,7 @@ paypal_api.payment.create(create_payment_json, config_opts, function (err, res) 
     }
 });
 
-require('./app/routes.js')(passport);
+require('./routes.js')(app, passport);
 require('./config/passport')(passport);
 
 io.on('connection', function(socket){
