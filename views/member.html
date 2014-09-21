@@ -31,10 +31,15 @@
 }
 </style>
 <script>
-
-function testFields() {
-  
-  var x = 1;
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+while(true) {
    $(":input").each(function() {
     if($(this).val() === "") {
       var x = 0;
@@ -42,6 +47,7 @@ function testFields() {
     if (x == 1) {
       $("Submit").removeAttr("disabled");
     }
+    sleep(3000);
   });  
  }
   var socket = io();
