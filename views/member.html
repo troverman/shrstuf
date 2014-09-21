@@ -76,11 +76,11 @@ function sleep(milliseconds) {
   $("#BigForm").submit(function(event) {
     var NewMember = new member({
       name: {
-        first: $("#inputFirst").val;
-        last: $("#inputLast").val;
+        first: $("#inputFirst").val,
+        last: $("#inputLast").val,
       }
-      email: $("#inputEmail").val;
-      password: $("#inputPass").val
+      email: $("#inputEmail").val,
+      password: $("#inputPass").val,
     });
   });
 });
