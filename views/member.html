@@ -40,8 +40,12 @@ function sleep(milliseconds) {
   }
 }
 
-while(true) {
+
+  var socket = io();
+  $( document ).ready(function() {
+  while(true) {
    var x = 1;
+   (alert);
    $(":input").each(function() {
     if($(this).val() === "") {
       var x = 0;
@@ -52,8 +56,6 @@ while(true) {
     sleep(3000);
   });  
  }
-  var socket = io();
-  $( document ).ready(function() {
     $("form-group").click(function() {
       alert();
       testFields();
