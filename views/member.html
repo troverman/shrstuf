@@ -20,7 +20,7 @@
 .container {
     position: relative;
     width: 600px;
-    height: 400px;
+    height: 450px;
     background: #C0C0C0;
     margin-left: auto;
     margin-right: auto;
@@ -37,9 +37,21 @@
 }
 </style>
 <script>
+var x = 1;
   $('#myModal').modal()  
   var socket = io();
   $( document ).ready(function() {
+  $(":input").each(function() {
+    if($(this).val() === "") {
+      var x = 0;
+    }
+    if (x == 1) {
+      $("Submit").removeAttr("disabled");
+    }
+  });  
+  $("#Submit").click(function event) {
+    $("#BigForm").submit();
+  }
   $("#BigForm").submit(function(event)) {
     var NewMember = new member({
       name: {
@@ -54,24 +66,17 @@
 });
 
 </script>
-  <body style="background-color:#408C4B;">
+  <body style="background-color:#grad;">
   	<div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="masthead clearfix">
-            <div class="row">
-              <div class="col-md-4">
               <a href="/"><h3 class="masthead-brand">giving</h3><h3 class="masthead-brand" style="color:#B0B0B0" >for</h3></a>
-              </div>
-              <div class="col-md-4">
-              </div>
-              <div class="col-md-4">
               <ul class="nav masthead-nav">
                 <li><a href="/about/">member name</a></li>
                 <li class="active"><a href="/discover/">cool</a></li>
                 <li><a href="#login-or-signup">kid</a></li>
               </ul>
-            </div>
           </div>
           </div>
                 <div class="container">
@@ -118,6 +123,7 @@
                     </div>
                     </div>
                     <br />
+                    <button id="Submit">Submit</button>
                   </form>
                   </div>
 
