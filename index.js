@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var ejs = require('ejs');
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
 var $ = require("jquery");
