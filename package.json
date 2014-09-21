@@ -24,7 +24,7 @@
     "passport-google-oauth" : "~0.1.5",
     "connect-flash" : "~0.1.1",   
     "bcrypt-nodejs" : "latest",
-    "utf8" : "3.4.8"
+    "utf8" : "2.0.0"
   },
   "engines": {
     "node": "0.10.x"
