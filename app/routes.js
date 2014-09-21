@@ -2,7 +2,7 @@ module.exports = function(app, passport) {
 
 
 app.get('/', function(req, res) {
-    res.render('index.ejs')
+    res.render('index.ejs');
 });
 
 app.get('/about', function (req, res)
@@ -40,7 +40,7 @@ app.get('/project', function (req, res){
 });
 
 app.get('/search', function (req, res){
-    res.render('search.ej');
+    res.render('search.ejs');
 });
 
 
