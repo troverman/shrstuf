@@ -10,10 +10,11 @@
 	<script src="/socket.io/socket.io.js"></script>
   </head>
 <script>
+  $('#myModal').modal()  
   var socket = io();
   $( document ).ready(function() {
   $('button:first').click(function(){
-    $('#myModal').modal();
+    $('#myModal').modal('show') 
 
   alert();
   });
