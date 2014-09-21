@@ -56,20 +56,7 @@ function sleep(milliseconds) {
     sleep(3000);
   }); 
   }
-    $("form-group").click(function() {
-      alert();
-      testFields();
-    });
-    $("#inputLast").focus(function() {
-      testFields();
-    }); 
-    $("#inputEmail").focus(function() {
-      testFields();
-    }); 
-    $("#inputPass").focus(function() {
-      testFields();
-    });  
-  
+
   $("#Submit").click(function( event) {
     $("#BigForm").submit();
   });
@@ -81,6 +68,9 @@ function sleep(milliseconds) {
       },
       email: $("#inputEmail").val,
       password: $("#inputPass").val,
+    });
+    NewMember.save(function (err, NewMember) {
+      if (err) return console.error(err);
     });
   });
 });
