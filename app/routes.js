@@ -7,40 +7,40 @@ app.get('/', function(req, res) {
 
 app.get('/about', function (req, res)
 {
-    res.render('about.html');
+    res.render('about.ejs');
 });
 
 app.get('/account', function (req, res)
 {
-    res.render('account.html');
+    res.render('account.ejs');
 });
 
 app.get('/api', function (req, res)
 {
-    res.render('api.html');
+    res.render('api.ejs');
 });
 
 app.get('/chat', function (req, res)
 {
-    res.render('chat.html');
+    res.render('chat.ejs');
 });
 
 app.get('/discover', function (req, res)
 {
-    res.render('discover.html');
+    res.render('discover.ejs');
 });
 
 app.get('/member', function (req, res)
 {
-    res.render('member.html');
+    res.render('member.ejs');
 });
 
 app.get('/project', function (req, res){
-    res.render('project.html');
+    res.render('project.ejs');
 });
 
 app.get('/search', function (req, res){
-    res.render('search.html');
+    res.render('search.ej');
 });
 
 
