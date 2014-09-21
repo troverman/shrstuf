@@ -33,7 +33,7 @@
 <script>
 
 function testFields() {
-  alert();
+  
   var x = 1;
    $(":input").each(function() {
     if($(this).val() === "") {
@@ -47,6 +47,7 @@ function testFields() {
   var socket = io();
   $( document ).ready(function() {
     $("#inputFirst").change(function() {
+      alert();
       testFields();
     });
     $("#inputLast").change(function() {
