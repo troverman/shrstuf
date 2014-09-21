@@ -39,14 +39,14 @@ function sleep(milliseconds) {
     }
   }
 }
-
+  self = this;
 
   var socket = io();
   $( document ).ready(function() {
   while(true) {
    var x = 1;
-   (alert);
-   $(":input").each(function() {
+   self.(alert);
+   $("form-control").each(function() {
     if($(this).val() === "") {
       var x = 0;
     }
@@ -70,9 +70,9 @@ function sleep(milliseconds) {
       testFields();
     });  
   
-  $("#Submit").click(function event) {
+  $("#Submit").click(function( event) {
     $("#BigForm").submit();
-  }
+  });
   $("#BigForm").submit(function(event) {
     var NewMember = new member({
       name: {
