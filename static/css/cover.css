@@ -129,7 +129,7 @@ body {
 
 @media (min-width: 768px) {
   .masthead {
-    position: fixed;
+    //position: fixed;
     top: 0;
   }
   .mastfoot {
@@ -150,6 +150,6 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 80%;
+    width: 100%;
   }
 }
