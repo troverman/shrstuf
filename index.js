@@ -30,9 +30,9 @@ require('./app/routes.js')(app, passport);
 
 
 app.get('/test', function (req, res){
-    //mongoose.model('member').find(function(err, member)){
-        //res.send('test');
-    //});
+    mongoose.model('member').find(function(err, member)){
+        res.send('test');
+    });
 });
 
 
