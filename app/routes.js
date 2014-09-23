@@ -37,7 +37,9 @@ app.get('/search', function (req, res){
 });
 
 app.get('/test', function (req, res){
-    res.send('test');
+    mongoose.model('member').find(function(err, member)){
+        res.send('test');
+    });
 });
 
 //test
