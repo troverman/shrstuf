@@ -26,7 +26,7 @@ db.once('open', function callback () {
         title:  String,
         author: String,
     });
-    var member = mongoose.model('member', memberSchema);
+    //var member = mongoose.model('member', memberSchema);
 });
 
 require('./app/routes.js')(app, passport);
