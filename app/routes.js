@@ -36,6 +36,11 @@ app.get('/search', function (req, res){
     res.render('search');
 });
 
+var projectSchema = new mongoose.Schema({
+  title:  String,
+  author: String,
+});
+
 app.get('/test', function (req, res){
     //mongoose.model('member').find(function(err, member)){
         //res.send('test');
