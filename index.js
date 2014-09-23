@@ -22,16 +22,15 @@ mongoose.connect(process.env.MONGOHQ_URL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
-  // yay!
+    var projectSchema = new mongoose.Schema({
+        title:  String,
+        author: String,
+    });
+    var member = mongoose.model('member', memberSchema);
 });
 
 require('./app/routes.js')(app, passport);
 
-/*var projectSchema = new mongoose.Schema({
-  title:  String,
-  author: String,
-});
-var member = mongoose.model('member', memberSchema);*/
 
 
 //app.get('/test', function (req, res){
