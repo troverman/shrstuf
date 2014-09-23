@@ -34,11 +34,11 @@ var projectSchema = new mongoose.Schema({
 var member = mongoose.model('member', memberSchema);
 
 
-app.get('/test', function (req, res){
-    mongoose.model('member').find(function(err, member)){
-        res.send('test');
-    });
-});
+//app.get('/test', function (req, res){
+//    mongoose.model('member').find(function(err, member)){
+//        res.send('test');
+//    });
+//});
 
 
 io.on('connection', function(socket){
