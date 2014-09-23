@@ -33,11 +33,11 @@ require('./app/routes.js')(app, passport);
 
 
 
-//app.get('/test', function (req, res){
-//    mongoose.model('member').find(function(err, member)){
-//        res.send('test');
-//    });
-//});
+app.get('/test', function (req, res){
+    mongoose.model('member').find(function(err, member)){
+        res.send('test');
+    });
+});
 
 
 io.on('connection', function(socket){
