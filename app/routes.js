@@ -39,7 +39,7 @@ app.get('/search', function (req, res){
 var test = new project({ name: 'test' })
 
 app.get('/test', function (req, res){
-    res.send(test);
+    res.send('test');
 });
 
 
