@@ -36,6 +36,8 @@ app.get('/search', function (req, res){
     res.render('search');
 });
 
+var test = new project({ name: 'test' })
+
 app.get('/test', function (req, res){
     res.send(test);
 });
