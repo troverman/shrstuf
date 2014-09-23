@@ -27,3 +27,6 @@ var transactionSchema = new mongoose.Schema({
 var member = mongoose.model('member', memberSchema);
 var project = mongoose.model('project', projectSchema);
 var transactions = mongoose.model('transcations', transactionSchema);
+
+
+var test = new project({ name: 'test' })
