@@ -27,6 +27,11 @@ db.once('open', function callback () {
 
 require('./app/routes.js')(app, passport);
 
+var projectSchema = new mongoose.Schema({
+  title:  String,
+  author: String,
+});
+var member = mongoose.model('member', memberSchema);
 
 
 app.get('/test', function (req, res){
