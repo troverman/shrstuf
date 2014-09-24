@@ -151,7 +151,7 @@
                       <td><%= transactions.sort({value: 1}).find( {}, { member_receive: { $slice: i, 1 } } )%></td>
                       <td><%= transactions.sort({value: 1}).find( {}, { value: { $slice: i, 1 } } )%>/td>
                     </tr>
-                <% } %>
+                <% }; %>
                 </tbody>
               </table>
             </div>
