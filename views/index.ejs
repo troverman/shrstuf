@@ -147,7 +147,7 @@
                 <% for (var i = 0; i<10; i++) { %>
                    <tr>
                       <td><%= i %></td>
-                      <td><%= transactions.sort({value: 1}).limit(1))%></td>
+                      <td><%= transactions.sort({value: 1}).limit(1)%></td>
                       <td><%= /transactions.sort({value: 1}).find({ member_receive: { $slice: i, 1 } } )/%></td>
                       <td><%= /transactions.sort({value: 1}).find( { value: { $slice: i, 1 } } ) /%></td>
                     </tr>
