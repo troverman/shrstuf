@@ -39,6 +39,7 @@ exports.create = function ( req, res ){
 };
 
 require('./app/routes.js')(app, passport);
+require(db);
 
 
 
