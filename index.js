@@ -1,7 +1,7 @@
 /*
 set up addons
 */
-require('./app/models/models.js')
+
 var express = require('express');
 var app = express();
 var http = require('http');
@@ -40,6 +40,7 @@ exports.create = function ( req, res ){
 
 require('./app/routes.js')(app, passport);
 require(db);
+require('./app/models/models.js')
 
 
 
