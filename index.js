@@ -8,7 +8,7 @@ var http = require('http');
 var passport = require('passport');
 var cool = require('cool-ascii-faces');
 var io = require('socket.io')(http);
-var $ = require("jquery");
+var $ = require('jquery');
 var server = http.createServer(app);
 
 app.use('/static', express.static(__dirname + '/static'));
@@ -39,7 +39,7 @@ exports.create = function ( req, res ){
 };
 
 require('./app/routes.js')(app, passport);
-require(db);
+require('db');
 require('./app/models/models.js')
 
 
