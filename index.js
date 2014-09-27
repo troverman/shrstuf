@@ -1,7 +1,7 @@
 /*
 set up addons
 */
-
+require('./app/models/models.js')
 var express = require('express');
 var app = express();
 var http = require('http');
@@ -16,26 +16,30 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
-var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOHQ_URL);
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+app.use( express.json());
+app.use( express.urlencoded());
+app.use( express.methodOverride());
 
 
-exports.create = function ( req, res ){
-  new Todo({
-    content    : req.body.content,
-    updated_at : Date.now()
-  }).save( function( err, todo, count ){
-    res.redirect( '/' );
-  });
-};
+
+
+
 
 require('./app/routes.js')(app, passport);
-require('./app/models/models.js')
 
 
+exports.index = function ( req, res ){
+  res.render( 'index', { title : 'Express Todo Example' });
+};
+
+exports.index = function ( req, res ){
+  Todo.find( function ( err, todos, count ){
+    res.render( 'index', {
+      title : 'Express Todo Example',
+      todos : todos
+    });
+  });
+};
 
 //app.get('/test', function (req, res){
 //    mongoose.model('member').find(function(err, member)){

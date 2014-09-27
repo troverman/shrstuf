@@ -2,6 +2,9 @@ module.exports = function(app, passport) {
 
 app.get('/', function(req, res) {
     res.render("index");
+    mongoose.model('transactions').find(function(err, transactions) {
+        res.send(transactions);
+    });
 });
 
 app.get('/about', function (req, res){
