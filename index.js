@@ -21,13 +21,7 @@ mongoose.connect(process.env.MONGOHQ_URL);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-    var projectSchema = new mongoose.Schema({
-        title:  String,
-        author: String,
-    });
-    var member = mongoose.model('member', projectSchema);
-});
+
 
 exports.create = function ( req, res ){
   new Todo({
