@@ -21,7 +21,7 @@ var transactionSchema = new mongoose.Schema({
   project: String,
   currency_array: String,
   currency_value_array:String,
-  value : double,
+  value : Number,
 });
 
 
