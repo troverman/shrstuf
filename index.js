@@ -1,7 +1,7 @@
 /*
 set up addons
 */
-
+require('./app/models/models.js')
 var express = require('express');
 var app = express();
 var http = require('http');
@@ -28,6 +28,15 @@ db.once('open', function callback () {
     });
     var member = mongoose.model('member', projectSchema);
 });
+
+exports.create = function ( req, res ){
+  new Todo({
+    content    : req.body.content,
+    updated_at : Date.now()
+  }).save( function( err, todo, count ){
+    res.redirect( '/' );
+  });
+};
 
 require('./app/routes.js')(app, passport);
 

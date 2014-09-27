@@ -36,7 +36,6 @@ app.get('/search', function (req, res){
     res.render('search');
 });
 
-
 // process the signup form
 app.post('/signup', passport.authenticate('local-signup', {
 	successRedirect : '/profile', // redirect to the secure profile section
