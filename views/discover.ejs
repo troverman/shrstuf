@@ -41,7 +41,18 @@
             <h1 class="cover-heading" style="float:left;">discover</h1>
             <a href="/about/" style="float:right;"><button type="button" class="btn btn-primary">filter</button></a>
 
-            <div style="clear:both;"></div><br><br>
+            <div style="clear:both;"></div>
+            <br><br>
+            <div class="well">
+              <h5 style="color:rgb(80,80,80)">filters</h5>
+              <div style="margin-right:16px;"><input name="search_form_add_tag" type="text" id="search_add_tag_form" /></div>
+              <% for(var i=0; i<10; i++) {%>
+                <p>tag</p>
+              <% } %>
+              <br>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="tags">
+            </div>
+            <br><br>
             <div class="well">
               <div id="project-list-container">
               <% for(var i=0; i<1000; i++) {%>
