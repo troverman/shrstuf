@@ -13,6 +13,7 @@
   </head>
 <script>
   var socket = io();
+  var test = [1,2,3,4,5];
 </script>
 
   <body style="background-color:#408C4B;">
@@ -36,6 +37,13 @@
             <h1 class="cover-heading" style="float:left;">discover</h1>
             <div style="clear:both;"></div>
             <div class="well">
+
+
+              <ul>
+              <% for(var i=0; i<test.length; i++) {%>
+                 <li><%= supplies[i] %></li>
+              <% } %>
+              </ul>
               test
             </div>
 
