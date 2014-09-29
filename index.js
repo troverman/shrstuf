@@ -18,20 +18,9 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
-
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-    var projectSchema = new mongoose.Schema({
-        title:  String,
-        author: String,
-    });
-    var member = mongoose.model('member', projectSchema);
-});
 
 require('./app/routes.js')(app, passport);
-
-
 
 //app.get('/test', function (req, res){
 //    mongoose.model('member').find(function(err, member)){
