@@ -6,13 +6,29 @@
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="/static/css/cover.css" type="text/css" />
 	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+  <link rel="stylesheet" type="text/css" href="/static/css/jquery.tagsinput.css" />
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="ejs_production.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.tagsinput.js"></script>  
   </head>
 <script>
   var socket = io();
+  function onAddTag_search(tag) {
+    //ajax call here
+  }
+  $(document).ready(function() {
+    $('#search_add_tag_form').tagsInput({ 
+      onAddTag:onAddTag_search,
+      onRemoveTag:onAddTag_search,
+      'defaultText':'tags',
+      'width':'auto',
+      'height':'auto'
+    });
+  });
 </script>
 
   <body style="background-color:#408C4B;">
@@ -42,6 +58,8 @@
             <div class="well">
               filters
               tag1,tag2,tag3,tag4,tag5
+              <div style="margin-right:16px;"><input name="search_form_add_tag" type="text" id="search_add_tag_form" /></div><br>   
+
               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="tags">
             </div>
             <br><br>
@@ -49,8 +67,10 @@
               <% for(var i=0; i<100; i++) {%>
                 <div id="project-list-item">
                   <img style="height:64px;" src="/static/images/noimage.png"/>
-                  <p class="lead" style="color:rgb(10,10,10);text-align:left;">resutls</p><hr>
+                  <p class="lead" style="color:rgb(10,10,10);text-align:left;">resutls</p>
+                  <a><p>#hashtag</p></a>
                 </div>
+                <hr>
               <% } %>
               <a href=""><p class="lead" style="color:rgb(10,10,10)">load more</p></a>
             </div>
