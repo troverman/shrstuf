@@ -21,6 +21,7 @@
     //ajax call here
   }
   $(document).ready(function() {
+    alert('test');
     $('#search_add_tag_form').tagsInput({ 
       onAddTag:onAddTag_search,
       onRemoveTag:onAddTag_search,
@@ -58,17 +59,17 @@
             <div class="well">
               filters
               tag1,tag2,tag3,tag4,tag5
-              <div style="margin-right:16px;"><input name="search_form_add_tag" type="text" id="search_add_tag_form" /></div><br>   
-
+              <div style="margin-right:16px;"><input name="search_form_add_tag" type="text" id="search_add_tag_form" /></div>
+              <br>
               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="tags">
             </div>
             <br><br>
             <div class="well">
               <% for(var i=0; i<100; i++) {%>
                 <div id="project-list-item">
-                  <img style="height:64px;" src="/static/images/noimage.png"/>
+                  <img style="height:64px;float:left;" src="/static/images/noimage.png"/>
                   <p class="lead" style="color:rgb(10,10,10);text-align:left;">resutls</p>
-                  <a><p>#hashtag</p></a>
+                  <a><p style="text-align:left;color:rgb(140,140,140);">#hashtag</p></a>
                 </div>
                 <hr>
               <% } %>
