@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>givingfor - giving is receiving</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/cover.css" type="text/css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="ejs_production.js"></script>
+
+  </head>
+<style>
+.container {
+    position: relative;
+    width: 600px;
+    height: 450px;
+    background: #C0C0C0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    border:5px solid #FFFFFF;
+    opacity: 0.9;
+}
+
+.form-yo {
+    width 250px;
+}
+</style>
+<script>
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+};
+  self = this;
+
+  var socket = io();
+  $( document ).ready(function() {
+  while(true) {
+   var x = 1;
+   $(":input").each(function() {
+    if($(this).val() === "") {
+      var x = 0;
+    }
+    if (x == 1) {
+      $("Submit").removeAttr("disabled");
+    }
+    sleep(40000);
+  }); 
+  }
+
+  $("#Submit").click(function( event) {
+    $("#BigForm").submit();
+  });
+  $("#BigForm").submit(function(event) {
+    var NewMember = new member({
+      name: {
+        first: $("#inputFirst").val,
+        last: $("#inputLast").val,
+      },
+      email: $("#inputEmail").val,
+      password: $("#inputPass").val,
+    });
+    NewMember.save(function (err, NewMember) {
+      if (err) return console.error(err);
+    });
+  });
+});
+</script>
+  <body style="background-color:green; opacity: 85;">
+  	<div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+              <a href="/"><h3 class="masthead-brand">giving</h3><h3 class="masthead-brand" style="color:#B0B0B0" >for</h3></a>
+              <ul class="nav masthead-nav">
+                <li><a href="/about/">member name</a></li>
+                <li class="active"><a href="/discover/">cool</a></li>
+                <li><a href="#login-or-signup">kid</a></li>
+              </ul>
+          </div>
+                <div class="container">
+                    <h4 class="masthead-brand" align="left">Registration</h4><br />
+                    <form class="form-horizontal" id="BigForm" role="form">
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-yo">
+                    <label class="col-sm-3">First Name:     
+                     </label>
+                    <div class="col-sm-9">
+                    <input type="email"  id="inputFirst" placeholder="First Name">
+                    </div>
+                    </div>
+                    <br />
+
+                    <div class="form-yo">
+                    <label  class="col-sm-3"> 
+                    Last Name:   
+                     </label>
+                    <div class="col-sm-9">
+                    <input type="email" id="inputLast" placeholder="Last Name">
+                    </div>
+                    </div>
+                    <br />
+
+
+                    <div class="form-yo" >
+                    <label  class="col-sm-3"> Email:      
+                     </label>
+                    <div class="col-sm-9">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                    </div>
+                    <br />
+
+
+                    <div class="form-yo" >
+                    <label class="col-sm-3"> Password:     
+                     </label>
+                    <div class="col-sm-9">
+                    <input type="email" id="inputPass" placeholder="Password">
+                    </div>
+                    </div>
+                    <br />
+                    <button id="Submit" disabled>Submit</button>
+                  </form>
+                  </div>
+
+                </div>
+                </div>
+          
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>project "givingfor" @<a href="http://hackgt.com/">hackgt</a></p>
+            </div>
+          </div>
+
+
+      </div>
+
+  </body>
+</html>

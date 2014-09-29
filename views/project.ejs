@@ -3,20 +3,27 @@
   <head>
     <title>givingfor - giving is receiving</title>
     <script src="/socket.io/socket.io.js"></script>
-	<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="/static/css/cover.css" type="text/css" />
-	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="/static/js/bootstrap.min.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/static/css/cover.css" type="text/css" />
+  <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+  <link rel="stylesheet" type="text/css" href="/static/css/jquery.tagsinput.css" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="ejs_production.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.tagsinput.js"></script>  
   </head>
 <script>
   var socket = io();
 </script>
+<style>
+  #member-list-item:hover{background-color:rgb(220,220,220);}
+</style>
 
   <body style="background-color:#408C4B;">
-  	<div class="site-wrapper">
+    <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container" style="width:80%">
           <div class="masthead clearfix">
@@ -31,30 +38,48 @@
             </div>
           </div>
         </div>
-          <div style="height:840px;padding-top:200px;">
-            <h1 class="cover-heading">projects</h1>
-            <p class="lead">
-              <a href="/about/"><button type="button" class="btn btn-primary">learn more</button></a>
-            </p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
-            <p clas="lead">project area</p>
+        <br><br><br><br>
+          <div style="height:840px;margin-left:15%;margin-right:15%;">
+            <img style="height:64px;float:left;" src="/static/images/noimage.png"/>
+            <h1 style="float:left;" class="cover-heading">project name</h1>
+            <div style="clear:both;"></div>
+            <br><br>
+            <div class="well">
+              <h5 style="color:rgb(80,80,80)">about</h5>
+              <a href="/about/"><button type="button" class="btn btn-primary">follow</button></a>
+              <% for(var i=0; i<10; i++) {%>
+                <p>followers</p>
+              <% } %>
+              <p>goals</p>
+              <p>type</p>
+              <p>giving - x</p>
+              <p>receiving - y</p>
 
-            <i class="fa fa-trophy" style="font-size:64px;"></i>
-            <i class="fa fa-thumbs-o-up" style="font-size:64px;"></i>
+              <p>long description long description long description long description long description long description</p>
+              <a><p style="text-align:left;color:rgb(140,140,140);">#hashtags</p></a>
+
+
+            </div>
+            <br><br>
+            <div class="well">
+              <a href="/about/"><button type="button" class="btn btn-primary">new post</button></a>
+              <% for(var i=0; i<35; i++) {%>
+                <div id="member-list-item">
+                  <img style="height:64px;float:left;" src="/static/images/noimage.png"/>
+                  <p class="lead" style="color:rgb(10,10,10);text-align:left;">resutls</p>
+                  <a><p style="text-align:left;color:rgb(140,140,140);">#hashtag</p></a>
+                  <hr>
+                </div>
+              <% } %>
+              <a href=""><p class="lead" style="color:rgb(10,10,10)">load more</p></a>
+            </div>
           </div>
-         <br><br><br><br>
+          <br><br><br><br>
       </div>
     </div>
-
-
   </body>
 </html>
  
   
 
+    
