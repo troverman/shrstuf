@@ -2,6 +2,9 @@ module.exports = function(app, passport) {
 
 app.get('/', function(req, res) {
     res.render("index");
+    mongoose.model('transactions').find(function(err, transactions) {
+        res.send(transactions);
+    });
 });
 
 app.get('/about', function (req, res){
@@ -35,7 +38,6 @@ app.get('/project', function (req, res){
 app.get('/search', function (req, res){
     res.render('search');
 });
-
 
 // process the signup form
 app.post('/signup', passport.authenticate('local-signup', {
