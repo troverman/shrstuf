@@ -40,9 +40,16 @@
             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="search">
             <br><br>
             <div class="well">
+              filters
+              tag1,tag2,tag3,tag4,tag5
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="tags">
+            </div>
+            <br><br>
+            <div class="well">
               <% for(var i=0; i<100; i++) {%>
                 <div id="project-list-item">
-                  <p class="lead" style="color:rgb(10,10,10)">resutls</p><hr>
+                  <img style="height:64px;" src="/static/images/noimage.png"/>
+                  <p class="lead" style="color:rgb(10,10,10);text-align:left;">resutls</p><hr>
                 </div>
               <% } %>
               <a href=""><p class="lead" style="color:rgb(10,10,10)">load more</p></a>
