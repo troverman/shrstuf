@@ -126,7 +126,11 @@
           	<div style="margin-left:25%;margin-right:25%;">
 	          	<h1>project list</h1>
 	          	<div style="border:1px solid rgb(200,200,200)">
-	          		hello
+                <% for (var i = 0; i<10; i++) { %>
+                  <div>
+                      <p><%= i %></p>
+                  </div>
+                <% } %>
 	          	</div>
 			       </div>
 			       <br><br><br><br>
@@ -161,11 +165,13 @@
           	<br><br><br><br>
           	<div style="margin-left:25%;margin-right:25%;text-align:center;">
 	          	<i style="font-size:256px;" class="fa fa-heart"></i>
-              <p class="lead">share, donate, join, aww yes</p>
 
-              <a><button type="button" class="btn btn-primary">share <i style="fa fa-share"></i></button></a>
+              <a><button type="button" class="btn btn-primary">share <i style="fa fa-circle-thin"></i></button></a>
               <input style="width:50%;float:left;" type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
               <input style="width:50%;float:left;" type="email" class="form-control" id="exampleInputEmail1" placeholder="password">
+
+              <a hre="/project/givingfor/"><button type="button" class="btn btn-primary">donate <i style="fa fa-circle-thin"></i></button></a>
+              <p>donation progress</p>
 
 
 			     </div>
