@@ -27,6 +27,12 @@
   });
   };
 </script>
+<style>
+    #project-list-container{text-align:center;width:100%;}
+    #project-list-item{border:2px solid rgb(180,180,180);display:inline-block;padding:10px;margin:7px;border-radius:5px;background-color:rgb(105,105,105)}
+    #project-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;padding:11px;margin:7px;border-radius:5px;background-color:rgb(235,235,235);}
+</style>
+
 
   <body style="background-color:#408C4B;">
   	<div class="site-wrapper">
@@ -153,14 +159,14 @@
           	<br><br><br><br>
           	<div style="margin-left:25%;margin-right:25%;">
 	          	<h1>project list</h1>
-	          	<div style="border:1px solid rgb(200,200,200)">
-                <% for (var i = 0; i<10; i++) { %>
-                  <div>
-                      <p><%= i %></p>
+              <div id="project-list-container">
+                <% for(var i=0; i<1000; i++) {%>
+                  <div id="project-list-item">
+                    <p class="lead" style="">testing 123</p>
                   </div>
                 <% } %>
-	          	</div>
-			       </div>
+              </div>
+			      </div>
 			       <br><br><br><br>
        	  </div>
 
