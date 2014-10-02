@@ -150,10 +150,30 @@
        	  <div style="background-color:rgb(170,210,230);padding:20px;">
           	<br><br><br><br>
           	<div style="margin-left:25%;margin-right:25%;">
-				    <p class="lead"><a herf="/transparency/">transparency</a></p>
-				    <i class="fa fa-area-chart" style="font-size:64px;"></i>
-				    <i class="fa fa-pie-chart" style="font-size:64px;"></i>
-            <p class="lead">graphs and such. raw data. member data. open network.</p>
+				      <p class="lead"><a herf="/transparency/">transparency</a></p>
+				      <i class="fa fa-area-chart" style="font-size:64px;"></i>
+				      <i class="fa fa-pie-chart" style="font-size:64px;"></i>
+              <p class="lead">graphs and such. raw data. member data. open network.</p>
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th>"#"</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% for (var i = 0; i<10; i++) { %>
+                  <tr>
+                    <td><%= i %></td>
+                    <td>trevor</td>
+                    <td>some guy</td>
+                    <td>$<%= i %></td>
+                  </tr>
+                <% } %>
+                </tbody>
+              </table>
 
 			     </div>
 			     <br><br><br><br>
@@ -179,26 +199,6 @@
           	<br><br><br><br>
           	<div style="margin-left:25%;margin-right:25%;">
 	          	<h1>giving is receiving</h1>
-	          	<table class="table table-striped">
-                <thead>
-                    <tr>
-                      <th>"#"</th>
-                      <th>From</th>
-                      <th>To</th>
-                      <th>Payment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <% for (var i = 0; i<10; i++) { %>
-                  <tr>
-                    <td><%= i %></td>
-                    <td>trevor</td>
-                    <td>some guy</td>
-                    <td>$<%= i %></td>
-                  </tr>
-                <% } %>
-                </tbody>
-              </table>
             </div>
 			     <br><br><br><br>
        	  </div>
