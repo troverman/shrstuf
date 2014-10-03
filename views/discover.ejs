@@ -15,9 +15,9 @@
   var socket = io();
 </script>
 <style>
-    #project-list-container{text-align:center;width:100%;}
-    #project-list-item{border:2px solid rgb(180,180,180);display:inline-block;padding:10px;margin:7px;border-radius:5px;background-color:rgb(105,105,105)}
-    #project-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;padding:11px;margin:7px;border-radius:5px;background-color:rgb(235,235,235);}
+    #discover-list-container{text-align:center;width:100%;}
+    #discover-list-item{border:2px solid rgb(180,180,180);display:inline-block;padding:10px;margin:7px;border-radius:5px;background-color:rgb(225,225,225)}
+    #discover-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;padding:11px;margin:7px;border-radius:5px;background-color:rgb(235,235,235);}
 </style>
 
   <body style="background-color:#408C4B;">
@@ -54,10 +54,13 @@
             </div>
             <br><br>
             <div class="well">
-              <div id="project-list-container">
+              <div id="discover-list-container">
               <% for(var i=0; i<1000; i++) {%>
-                <div id="project-list-item">
-                  <p class="lead" style="">testing 123</p>
+                <div id="discover-list-item">
+                  <p class="lead" style=""><a href="/project/">project</a></p>
+                  <p class="" style=""><a href="/project/">description</a></p>
+                  <p class="lead" style=""><a href="/project/">tag1</a></p>
+
                 </div>
               <% } %>
               </div>
