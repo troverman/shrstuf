@@ -27,9 +27,11 @@ app.engine('html', require('ejs').renderFile);
 
 //routes and controllers
 app.use('/about', require('./controllers/about'));
-app.use('/index', require('./controllers/member'));
+app.use('/discover', require('./controllers/discover'));
+app.use('/index', require('./controllers/index'));
 app.use('/member', require('./controllers/member'));
 app.use('/project', require('./controllers/project'));
+app.use('/search', require('./controllers/search'));
 
 //require('./routes.js')(app, passport);
 
