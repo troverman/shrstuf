@@ -9,10 +9,7 @@ var $ = require('jquery');
 var server = http.createServer(app);
 
 
-
 app.use('/static', express.static(__dirname + '/static'));
-
-
 
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
