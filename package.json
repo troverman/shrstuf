@@ -10,7 +10,6 @@
     "webrtc.io": "latest",
     "webrtc.io-client": "latest",
     "cool-ascii-faces": "~1.3.x",
-    "express": "^4.9.5",
     "socket.io" : "^1.1.0",
     "mongoose" : "~3.8.x",
     "ejs": "~1.0",
