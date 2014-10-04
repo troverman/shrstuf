@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "givingfor",
   "version": "0.1.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "givingfor",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/troverman/givingfor-nodejs"
   },
   "keywords": [
     "node",
@@ -40,7 +40,7 @@
   ],
   "author": "Trevor Overman",
   "contributors": [
-    "Zeke Sikelianos <troverman@gmail.com> (http://www.troverman.com)"
+    "Trevor Overman<troverman@gmail.com> (http://www.troverman.com)"
   ],
   "license": "MIT"
 }
