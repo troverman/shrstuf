@@ -15,9 +15,11 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
-app.use( express.json());
-app.use( express.urlencoded());
-app.use( express.methodOverride());
+
+
+//app.use( express.json());
+//app.use( express.urlencoded());
+//app.use( express.methodOverride());
 
 //
 //app.use(passport.initialize());
