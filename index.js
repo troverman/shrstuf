@@ -20,14 +20,15 @@ app.use( express.urlencoded());
 app.use( express.methodOverride());
 
 
-
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 //routes and controllers
-//app.use('/about', require('./controllers/about'));
+app.use('/about', require('./controllers/about'));
+//app.use('/member', require('./controllers/member'));
+//app.use('/project', require('./controllers/project'));
 
-
-
-require('./routes.js')(app, passport);
+//require('./routes.js')(app, passport);
 
 
 
