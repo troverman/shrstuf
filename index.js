@@ -8,6 +8,8 @@ var io = require('socket.io')(http);
 var $ = require('jquery');
 var server = http.createServer(app);
 
+
+
 app.use('/static', express.static(__dirname + '/static'));
 
 
