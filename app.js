@@ -1,5 +1,5 @@
 
-require('./app/models/models.js')
+require('./models/models.js')
 var express = require('express');
 var app = express();
 var http = require('http');
@@ -8,8 +8,10 @@ var io = require('socket.io')(http);
 var $ = require('jquery');
 var server = http.createServer(app);
 
-
 app.use('/static', express.static(__dirname + '/static'));
+
+
+
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -19,16 +21,19 @@ app.use( express.urlencoded());
 app.use( express.methodOverride());
 
 
-require('./app/routes.js')(app, passport);
 
 
-//app.get('/test', function (req, res){
-//    mongoose.model('member').find(function(err, member)){
-//        res.send('test');
-//    });
-//});
+//routes and controllers
+//app.use('/about', require('./controllers/about'));
 
 
+
+require('./routes.js')(app, passport);
+
+
+
+
+//socket-io
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
