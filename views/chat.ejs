@@ -17,19 +17,19 @@
   <script type="text/javascript" src="ejs_production.js"></script>
   <script>
   $( document ).ready(function() {
-  var socket = io();
-  $('form').submit(function(){
-    socket.emit('chat message', $('#m').val());
-    $('#m').val('');
-    return false;
-  });
+    var socket = io();
+    $('form').submit(function(){
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
 
-  socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').text(msg));
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
   });
-});
-</script>
-</head>
+  </script>
+  </head>
   <body>
     <ul id="messages"></ul>
     <form action="">
