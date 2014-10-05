@@ -27,9 +27,9 @@ app.engine('html', require('ejs').renderFile);
 
 //routes and controllers
 app.use('/about', require('./controllers/about'));
+app.use('/account', require('./controllers/account'));
 app.use('/api', require('./controllers/api'));
-app.use('/chat', require('./controllers/api'));
-
+app.use('/chat', require('./controllers/chat'));
 app.use('/discover', require('./controllers/discover'));
 app.use('/', require('./controllers/index'));
 app.use('/member', require('./controllers/member'));
