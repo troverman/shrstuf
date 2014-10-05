@@ -37,12 +37,6 @@ app.use('/project', require('./controllers/project'));
 app.use('/search', require('./controllers/search'));
 
 
-//socket-io
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
 
 server.listen(app.get("port"), function(){
   console.log('listening on *:5000');
