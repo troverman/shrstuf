@@ -184,9 +184,13 @@
               <div id="project-list-container">
                 <% for(var i=0; i<10; i++) {%>
                   <div id="project-list-item">
-                    <p class="lead" style=""><a href="/project/">project</a></p>
-                    <p class="lead" style=""><a href="/project/">detail</a></p>
-                    <p class="lead" style=""><a href="/project/">tag(s)</a></p>
+                    <p class="lead" style=""><a href="/project/">project title</a></p>
+                    <img src="/static/images/noimage.png"/>
+                    <p class="lead" style="">detail detail detail detail detail detail detail detail detail detail detail</p>
+                    <% for(var i=0; i<5; i++) {%>
+                      <p class="lead" style=""><a href="/project/">tag <%= i %></a></p>
+                    <% } %>
+
                   </div>
                 <% } %>
               </div>
