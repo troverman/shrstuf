@@ -143,6 +143,22 @@
 	          	<h1>volunteering, giving skills, getting help. projects</h1><hr>
 				      <i class="fa fa-wrench" style="font-size:64px;"></i>
 
+              <div style="margin-left:25%;margin-right:25%;">
+              <div id="project-list-container">
+                <% for(var i=0; i<10; i++) {%>
+                  <div id="project-list-item">
+                    <p class="lead" style=""><a href="/project/">project title</a></p>
+                    <img src="/static/images/noimage.png"/>
+                    <p style="">detail detail detail detail detail detail detail detail detail detail detail</p>
+                    <% for(var j=0; j<5; j++) {%>
+                      <a href="/project/">tag</a>
+                    <% } %>
+
+                  </div>
+                <% } %>
+              </div>
+            </div>
+
 			       </div>
 			       <br><br><br><br><br><br>
        	  </div>
@@ -179,25 +195,6 @@
 			     <br><br><br><br>
        	  </div>
 
-       	  <div style="background-color:rgb(240,240,240);padding:20px;">
-          	<br><br><br><br>
-          	<div style="margin-left:25%;margin-right:25%;">
-              <div id="project-list-container">
-                <% for(var i=0; i<10; i++) {%>
-                  <div id="project-list-item">
-                    <p class="lead" style=""><a href="/project/">project title</a></p>
-                    <img src="/static/images/noimage.png"/>
-                    <p style="">detail detail detail detail detail detail detail detail detail detail detail</p>
-                    <% for(var j=0; j<5; j++) {%>
-                      <a href="/project/">tag</a>
-                    <% } %>
-
-                  </div>
-                <% } %>
-              </div>
-			      </div>
-			       <br><br><br><br>
-       	  </div>
 
        	  <div style="background-color:#34495E;padding:20px;">
           	<br><br><br><br>
