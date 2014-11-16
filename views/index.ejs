@@ -25,6 +25,35 @@
   });
   };
 </script>
+<script>
+var looper;
+var degrees = 0;
+function rotateAnimation(el,speed){
+  var elem = document.getElementById(el);
+  if(navigator.userAgent.match("Chrome")){
+    elem.style.WebkitTransform = "rotate("+degrees+"deg)"; 
+  }
+  else if(navigator.userAgent.match("Firefox")){
+    elem.style.msTransform = "rotate("+degrees+"deg)"; 
+  }
+  else if(navigator.userAgent.match("MSIE")){
+    elem.style.MozTransform = "rotate("+degrees+"deg)"; 
+  }
+  else if(navigator.userAgent.match("Opera")){
+    elem.style.OTransform = "rotate("+degrees+"deg)"; 
+  }
+  else{
+    elem.style.transform = "rotate("+degrees+"deg)";
+  }
+  looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+  degrees++;
+  if(degrees>359){
+    degrees = 1; 
+  }
+  document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+
+}
+</script>
 <style>
     #project-list-container{text-align:center;width:100%;}
     #project-list-item{border:2px solid rgb(180,180,180);display:inline-block;padding:10px;margin:7px;border-radius:5px;background-color:rgb(225,225,225)}
@@ -45,7 +74,10 @@
         <div class="cover-container" style="width:80%">
           <div class="masthead clearfix">
             <div class="inner">
-              <a href="/"><img style="float:left;height:88px;" src="/static/images/white-logo.png"/><h3 class="masthead-brand" style="padding-top:20px;" id="logo-text">shr</h3><h3 id="logo-text" class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
+              <a href="/"><img id="logo" style="float:left;height:88px;" src="/static/images/white-logo.png"/>
+              <script>rotateAnimation("logo",20);</script>
+
+              <h3 class="masthead-brand" style="padding-top:20px;" id="logo-text">shr</h3><h3 id="logo-text" class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
               <ul class="nav masthead-nav">
                 <li><a href="/about/" style="padding-top:35px;" id="about-text">about</a></li>
                 <li><a href="/items/" id="discover-text"><i class="fa fa-random" style="margin-right:5px;"></i>discover</a></li>
