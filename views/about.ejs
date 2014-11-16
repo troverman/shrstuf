@@ -76,7 +76,7 @@ a:hover {
                           </p>
                       </a>
                     </div>
-                     <div id="div-find-stuff-by-tag" style="display:none">
+                     <div id="div-find-stuff-archive" style="display:none">
                       <a href="/search/">
                           <p style="font-size:50px;color:rgb(71,188,255)">
                              <font face='OSWALD'>
@@ -182,9 +182,12 @@ a:hover {
   $('#find-switch').hover(function() {
         $(this).find('#div-find-stuff').hide();
         $(this).find('#div-find-stuff-by-tag').show();
+        $(this).find('#div-find-stuff-archive').show();
     }, function() {
         $(this).find('#div-find-stuff-by-tag').hide();
+        $(this).find('#div-find-stuff-archive').hide();
         $(this).find('#div-find-stuff').show();
+
   });
   $('#share-switch').hover(function() {
         $(this).find('#div-share-stuff').hide();
