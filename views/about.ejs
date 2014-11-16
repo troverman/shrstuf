@@ -51,7 +51,7 @@ a:hover {
 
           
             <div class="col-md-6 portfolio-item">
-              <div class="switch">
+              <div id="find-switch">
                     <div class="about-blocks" id="div-find-stuff">
                       <a href="/search/">
                         <p style="font-size:100px">
@@ -136,7 +136,7 @@ a:hover {
         $("#div-find-stuff").css({"display": "block"});
     });*/
 
-  $('.switch').hover(function() {
+  $('#find-switch').hover(function() {
         $(this).find('#div-find-stuff').hide();
         $(this).find('#div-find-stuff-by-tag').show();
     }, function() {
