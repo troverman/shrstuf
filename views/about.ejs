@@ -174,6 +174,18 @@ a:hover {
 </script>   
 <script>        
   $(document).ready(function(){
+  $('#share-switch').hover(function() {
+        $(this).find('#div-share-stuff').hide();
+        $(this).find('#div-share-stuff-by-tag').show();
+    }, function() {
+        $(this).find('#div-share-stuff-by-tag').hide();
+        $(this).find('#div-share-stuff').show();
+  });
+
+  });
+</script>   
+<script>        
+  $(document).ready(function(){
   $('#people-tab-switch').hover(function() {
         $(this).find('#div-people-tab').hide();
         $(this).find('#div-find-people-tab').show();
