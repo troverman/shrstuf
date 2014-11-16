@@ -116,14 +116,17 @@ a:hover {
 
 
 
-<script>            
+<script>   
+  <div class="wrapper">
+    <div class="a">sdffsfs</div>
+  </div>         
   $(document).ready(function(){
     $('#div-find-stuff').hover(function(){
         $("#div-find-stuff-by-tag").css({"display": "block"});
         $("#div-find-stuff").css({"display": "none"});
 
-    },function(){
-        $("#div-find-stuff").css({"display": "inline-block"});
+    }.function(){
+        $("#div-find-stuff").css({"display": "block"});
         $('#div-find-stuff-by-tag').css({"display": "none"});
         
     });
