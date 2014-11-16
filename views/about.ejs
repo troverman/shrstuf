@@ -75,17 +75,26 @@ a:hover {
           
 
            <div class="col-md-6 portfolio-item">
-                <a href="http://www.google.com">
-                    <div class="about-blocks">
-                        <a href="#">
-                            <p style="font-size:100px">
-                            <font face='OSWALD' color:'rgb(71,188,255'>
-                                SHARE STUFF
-                            </font>
-                            </p>
-                        </a>
+              <div id="share-switch">
+                    <div class="about-blocks" id="div-share-stuff">
+                      <a href="/search/">
+                        <p style="font-size:100px">
+                           <font face='OSWALD' color:'rgb(71,188,255'>
+                              SHARE STUFF
+                           </font>
+                        </p>
+                      </a>
                     </div>
-                </a>
+                    <div id="div-share-stuff-by-tag" style="display:none">
+                      <a href="/search/">
+                          <p style="font-size:100px;color:rgb(71,188,255)">
+                             <font face='OSWALD'>
+                                SHARE BY TAG
+                             </font>
+                          </p>
+                      </a>
+                    </div>
+              </div>
             </div>
 
              <div class="col-md-6 portfolio-item">
@@ -120,22 +129,6 @@ a:hover {
 
 <script>        
   $(document).ready(function(){
-    /*$('#div-find-stuff').mouseenter(function(){
-        $("#div-find-stuff-by-tag").css({"display": "block"});
-        $("#div-find-stuff").css({"display": "none"});
-
-    },function(){
-      $("#div-find-stuff").css({"display": "block"});
-      $('#div-find-stuff-by-tag').css({"display": "none"});
-        
-    });
-
-    });
-    $('#div-find-stuff').mouseleave(function(){
-        $("#div-find-stuff-by-tag").css({"display": "none"});
-        $("#div-find-stuff").css({"display": "block"});
-    });*/
-
   $('#find-switch').hover(function() {
         $(this).find('#div-find-stuff').hide();
         $(this).find('#div-find-stuff-by-tag').show();
@@ -145,7 +138,19 @@ a:hover {
   });
 
   });
-</script>            
+</script>   
+<script>        
+  $(document).ready(function(){
+  $('#share-switch').hover(function() {
+        $(this).find('#div-share-stuff').hide();
+        $(this).find('#div-share-stuff-by-tag').show();
+    }, function() {
+        $(this).find('#div-share-stuff-by-tag').hide();
+        $(this).find('#div-share-stuff').show();
+  });
+
+  });
+</script>                 
 
           <!--<i class="fa fa-circle-thin" style="font-size:512px;"></i>-->
         
