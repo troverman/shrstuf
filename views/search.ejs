@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>givingfor - giving is receiving</title>
+    <title>search - givingfor</title>
     <script src="/socket.io/socket.io.js"></script>
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="/static/css/cover.css" type="text/css" />
@@ -68,6 +68,12 @@
               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="tags">
             </div>
             <br><br>
+            <div class="btn-toolbar" style="margin-left:15px;float:left;">
+              <div class="btn-group">
+                <a class="btn active" id="view-list"><i class="icon-align-justify"></i></a>
+                <a class="btn" id="view-table"><i class="icon-th"></i></a>
+              </div>
+            </div>
             <div class="well">
               <% for(var i=0; i<35; i++) {%>
                 <div id="search-list-item">
