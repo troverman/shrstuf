@@ -51,17 +51,24 @@ a:hover {
 
           
             <div class="col-md-6 portfolio-item">
-                <a href="http://www.google.com">
-                    <div id="the-div">
-                        <a href="#">
-                            <p style="font-size:100px">
-                            <font face='OSWALD' color:'rgb(71,188,255'>
-                                FIND STUFF
-                            </font>
-                            </p>
-                        </a>
+                    <div id="the-div" style="display:none">
+                      <a href="/search/">
+                        <p style="font-size:100px">
+                           <font face='OSWALD' color:'rgb(71,188,255'>
+                              FIND STUFF
+                           </font>
+                        </p>
+                      </a>
                     </div>
-                </a>
+                    <div id="div-2">
+                      <a href="/search/">
+                          <p style="font-size:100px;color:rgb(71,188,255)">
+                             <font face='OSWALD'>
+                                FIND BY TAG
+                             </font>
+                          </p>
+                      </a>
+                    </div>
             </div>
           
 
@@ -109,8 +116,15 @@ a:hover {
 
 
 
+<script>            
+  $(document).ready(function(){
+    $('#the-div').hover(function(){
+        $("#div-2").css({"display": "block"});
+    },function(){
+        $('#div-2').css({"display": "none"});
+    });
 
-
+  });
 
           <!--<i class="fa fa-circle-thin" style="font-size:512px;"></i>-->
         
