@@ -51,13 +51,14 @@ a:hover {
 
           
             <div class="col-md-6 portfolio-item">
+              <div class="switch">
                     <div class="about-blocks" id="div-find-stuff">
                       <a href="/search/">
-                        <!--<p style="font-size:100px">
+                        <p style="font-size:100px">
                            <font face='OSWALD' color:'rgb(71,188,255'>
                               FIND STUFF
                            </font>
-                        </p>-->
+                        </p>
                       </a>
                     </div>
                     <div id="div-find-stuff-by-tag" style="display:none">
@@ -69,6 +70,7 @@ a:hover {
                           </p>
                       </a>
                     </div>
+              </div>
             </div>
           
 
@@ -134,12 +136,12 @@ a:hover {
         $("#div-find-stuff").css({"display": "block"});
     });*/
 
-  $('#div-find-stuff').hover(function() {
-        $(this).find('#div-find-stuff-by-tag').hide();
-        $(this).find('#div-find-stuff').show();
-    }, function() {
+  $('.switch').hover(function() {
         $(this).find('#div-find-stuff').hide();
         $(this).find('#div-find-stuff-by-tag').show();
+    }, function() {
+        $(this).find('#div-find-stuff-by-tag').hide();
+        $(this).find('#div-find-stuff').show();
   });
 
   });
