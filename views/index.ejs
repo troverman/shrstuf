@@ -84,7 +84,7 @@
           		<p class="lead" style="color:#2f2e2e;">We think that connecting and sharing this stuff should be easier.</p>
               <p class="lead" style="color:#2f2e2e;">We made a website for you to do so. </p>
           	</div>
-          	<img id="logo" style="float:center;height:200px;" src="/static/images/white-logo.png"/>
+          	<img id="logo1" style="float:center;height:200px;" src="/static/images/white-logo.png"/>
           	<div style="clear:both;"></div>
           	<!--<i class="fa fa-circle-thin" style="font-size:256px;"></i>-->
               <a href="/items/"><button type="button" class="btn btn-primary">discover!</button></a>
@@ -198,6 +198,19 @@
 <script>
   $(document).ready(function(){
     $("#logo").rotate({ 
+      bind: 
+      { 
+      mouseover : function() { 
+        $(this).rotate({animateTo:200})
+      },
+        mouseout : function() { 
+          $(this).rotate({animateTo:0})
+        }
+     } 
+   
+});
+
+        $("#logo1").rotate({ 
       bind: 
       { 
       mouseover : function() { 
