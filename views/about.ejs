@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <style>
-
-a:hover {
-  background-color: blue;
-  text-decoration: none;
-}
-.about-blocks{
-  padding: 2px; background-color: rgb(122,229,255); border: 40px solid rgb(0,128,255);
-}
-.about-blocks:hover {
-  padding: 2px; background-color: rgb(122,229,255); border: 40px solid rgb(0,128,255);
-}
-
-</style>
-
-
     <title>givingfor - giving is receiving</title>
   <script src="/socket.io/socket.io.js"></script>
   <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
@@ -31,13 +15,13 @@ a:hover {
   var socket = io();
 </script>
 
-  <body style="background-color:#3BC7FF;">
+  <body style="background-color:#408C4B;">
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container" style="width:80%">
           <div class="masthead clearfix">
             <div class="inner">
-              <a href="/"><img style="float:left;height:88px;" src="/static/images/white-logo.png"/><h3 class="masthead-brand" style="padding-top:20px;">shr</h3><h3 class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
+              <a href="/"><img style="float:left;height:88px;" src="/static/images/tree.png"/><h3 class="masthead-brand" style="padding-top:20px;">giving</h3><h3 class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >for</h3></a>
               <ul class="nav masthead-nav">
                 <li><a href="/about/" style="padding-top:35px;">about</a></li>
                 <li><a href="/discover/"><i class="fa fa-random" style="margin-right:5px;"></i>discover</a></li>
@@ -49,161 +33,20 @@ a:hover {
         </div>
         <br><br><br><br>
         <div class="inner cover" style="margin-left:15%;margin-right:15%;">
-          <p> 
-            <font face='OSWALD' color:'rgb(255,255,255)'>
-              You have stuff you don’t need. Other people own what you do. We think that connecting and sharing this stuff should be easier. We made a website for you to do so. 
-            </font>
-          </p>
-           <!--<a href="/"><img style="float:center;height:700px;" src="/static/images/white-logo.png"/></a>-->
 
-           <div id="find-switch">
-             <div class="col-md-6 portfolio-item" style="padding:0px">
-                    <div class="about-blocks" id="div-find-stuff">
-                      <a href="/search/">
-                        <p style="font-size:100px">
-                           <font face='OSWALD' color:'rgb(71,188,255)'>
-                              STUFF
-                           </font>
-                        </p>
-                      </a>
-                    </div>
-                    <div id="div-find-stuff-by-tag" style="display:none">
-                      <a href="/search/">
-                          <p style="font-size:100px;color:rgb(71,188,255)">
-                             <font face='OSWALD'>
-                                FIND STUFF
-                             </font>
-                          </p>
-                      </a>
-                    </div>
-              </div>
-            </div>
+          <p>GivingFor… is a donation web-platform based on the innate concept of giving and receiving. A simple idea, yet one that society’s structures have limited the propagation of. Rather than vying toward ultimate utility for the human race, firms are instead focused on economic incentives of profit-maximization – a figment of our imagination, inhumane in essence. Profit at its core implies that one person must lose, however GivingFor eliminates the profit incentive by allowing us to exchange that which makes us most valuable in any adaptive situation. If a gap in knowledge exists, inscribe someone to fill that gap, and then be sure to remember such positive actions in order to give in turn, and contribute to an ever propagating, whole-sustaining platform based on the basis of community – providing for each other’s subsistent needs (Whatever those may be).</p>
+
+          <p>Our mission for givingfor is to revolutionize age-old value systems that initially developed in order to fulfill certain societal needs.  However, Collaborative systems, and apply that to a philanthropic community built on aiding one another in whichever manner possible. Primarily focused on the donation or exchange of time-effort or skillsets, money as an abundant resource, and knowledge, we hope to change how people perceive value. Through the development of a fully functioning and self-sustaining community platform, members will have access to a vast number of connections with opportunities to work on each other’s projects, or aid in the jumpstarting of the next</p>
+
+          <p>We want to have the ability to give currency, but also the ability to give other tangible items. Skills, and time (The allocation of your skill effort). Trying to find out what people lack, and then connecting them with people who have what they need, whether it be a skill, money, or mentorship in the form of time.</p>
+
+          <p>Giving is receiving.</p>
+          <i class="fa fa-circle-thin" style="font-size:512px;"></i>
+          <p>Complete transparency, a complete trail can be traced from end-to-end. When creating a project you must decide</p>
+          <p>The overarching key, the one word that could sum up everything. Virality – constructing your philosophy in a way by which people will not only align with your idea, but also be excited to be a part of it. </p>
+          <p>Virality is something that people can consume and share.</p>
+          <p>givingfor is a transparent, nonprofit crowdgiving platform that</p>
           
-           <div id="share-switch">
-           <div class="col-md-6 portfolio-item" style="padding:0px">
-                    <div class="about-blocks" id="div-share-stuff">
-                      <a href="http://www.google.com">
-                        <p style="font-size:100px">
-                           <font face='OSWALD' color:'rgb(71,188,255)'>
-                              SHARE
-                           </font>
-                        </p>
-                      </a>
-                    </div>
-                    <div id="div-share-stuff-by-tag" style="display:none">
-                      <a href="/search/">
-                          <p style="font-size:100px;color:rgb(71,188,255)">
-                             <font face='OSWALD'>
-                                SHARE BY TAG
-                             </font>
-                          </p>
-                      </a>
-                    </div>
-              </div>
-            </div>
-
-             <!--<div class="col-md-6 portfolio-item">
-                <a href="http://www.google.com">
-                    <div class="about-blocks">
-                        <a href="#">
-                            <p style="font-size:100px">
-                            <font face='OSWALD' color:'rgb(71,188,255'>
-                                PEOPLE     
-                            </font>
-                            </p>
-                        </a>
-                    </div>
-                </a>
-            </div>-->
-
-
-            <div class="col-md-6 portfolio-item" style="padding:0px">
-              <div id="people-tab-switch">
-                    <div class="about-blocks" id="div-people-tab">
-                      <a href="/search/">
-                        <p style="font-size:100px">
-                           <font face='OSWALD' color:'rgb(71,188,255)'>
-                              PEOPLE
-                           </font>
-                        </p>
-                      </a>
-                    </div>
-                    <div id="div-find-people-tab" style="display:none">
-                      <a href="/search/">
-                          <p style="font-size:100px;color:rgb(71,188,255)">
-                             <font face='OSWALD'>
-                                FIND 
-                             </font>
-                          </p>
-                      </a>
-                    </div>
-              </div>
-            </div>
-
-
-             <div class="col-md-6 portfolio-item" style="padding:0px">
-              <div id="about-tab-switch">
-                    <div class="about-blocks" id="div-about-tab">
-                    <a href="http://www.google.com"></a>
-                        <p style="font-size:100px">
-                           <font face='OSWALD' color:'rgb(71,188,255)'>
-                              ABOUT
-                           </font>
-                        </p>
-                      <!--</a>-->
-                    </div>
-                    <div id="div-about-tab-contact" style="display:none">
-                      <!--<a href="/search/">-->
-                      <a href="http://www.google.com">
-                          <p style="font-size:100px;color:rgb(71,188,255)">
-                             <font face='OSWALD'>
-                                CONTACT
-                             </font>
-                          </p>
-                      </a>
-                    </div>
-              </div>
-            </div>
-
-
-
-
-<script>        
-  $(document).ready(function(){
-  $('#find-switch').hover(function() {
-        $(this).find('#div-find-stuff').hide();
-        $(this).find('#div-find-stuff-by-tag').show();
-    }, function() {
-        $(this).find('#div-find-stuff-by-tag').hide();
-        $(this).find('#div-find-stuff').show();
-  });
-  $('#share-switch').hover(function() {
-        $(this).find('#div-share-stuff').hide();
-        $(this).find('#div-share-stuff-by-tag').show();
-    }, function() {
-        $(this).find('#div-share-stuff-by-tag').hide();
-        $(this).find('#div-share-stuff').show();
-  });      
-  $('#people-tab-switch').hover(function() {
-        $(this).find('#div-people-tab').hide();
-        $(this).find('#div-find-people-tab').show();
-    }, function() {
-        $(this).find('#div-find-people-tab').hide();
-        $(this).find('#div-people-tab').show();
-  });      
-  $('#about-tab-switch').hover(function() {
-        $(this).find('#div-about-tab').hide();
-        $(this).find('#div-about-tab-contact').show();
-    }, function() {
-        $(this).find('#div-about-tab-contact').hide();
-        $(this).find('#div-about-tab').show();
-  });
-
-  });
-</script>                     
-
-          <!--<i class="fa fa-circle-thin" style="font-size:512px;"></i>-->
-        
         </div>
         <br><br><br><br>
       </div>

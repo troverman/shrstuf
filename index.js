@@ -36,7 +36,7 @@ app.use('/chat', require('./controllers/chat'));
 app.use('/discover', require('./controllers/discover'));
 app.use('/', require('./controllers/index'));
 app.use('/member', require('./controllers/member'));
-app.use('/project', require('./controllers/project'));
+app.use('/item', require('./controllers/item'));
 app.use('/search', require('./controllers/search'));
 
 
