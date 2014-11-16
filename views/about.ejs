@@ -118,14 +118,20 @@ a:hover {
 
 <script>        
   $(document).ready(function(){
-    $('#div-find-stuff').hover(function(){
+    $('#div-find-stuff').mouseenter(function(){
         $("#div-find-stuff-by-tag").css({"display": "block"});
         $("#div-find-stuff").css({"display": "none"});
 
-    },function(){
+    /*},function(){
       $("#div-find-stuff").css({"display": "block"});
       $('#div-find-stuff-by-tag').css({"display": "none"});
         
+    });*/
+
+    });
+    $('#div-find-stuff').mouseleave(function(){
+        $("#div-find-stuff-by-tag").css({"display": "none"});
+        $("#div-find-stuff").css({"display": "block"});
     });
 
   });
