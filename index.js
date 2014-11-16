@@ -37,6 +37,8 @@ app.use('/discover', require('./controllers/discover'));
 app.use('/', require('./controllers/index'));
 app.use('/member', require('./controllers/member'));
 app.use('/item', require('./controllers/item'));
+app.use('/items', require('./controllers/items'));
+
 app.use('/search', require('./controllers/search'));
 
 
