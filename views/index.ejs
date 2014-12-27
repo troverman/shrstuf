@@ -9,6 +9,7 @@
   	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="/static/js/socket.io.js"></script>
     <script type="text/javascript" src="/static/js/ejs_production.js"></script>
+    <script type="text/javascript" src="/static/js/jQueryRotateCompressed.js"></script>
   </head>
 <script>
  for (var i = 0; i < 15; i++) {
@@ -45,10 +46,13 @@
         <div class="cover-container" style="width:80%">
           <div class="masthead clearfix">
             <div class="inner">
-              <a href="/"><img style="float:left;height:88px;" src="/static/images/white-logo.png"/><h3 class="masthead-brand" style="padding-top:20px;" id="logo-text">shr</h3><h3 id="logo-text" class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
+              <a href="/"><img id="logo" style="float:left;height:88px;" src="/static/images/white-logo.png"/>
+              
+
+              <h3 class="masthead-brand" style="padding-top:20px;" id="logo-text">shr</h3><h3 id="logo-text" class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
               <ul class="nav masthead-nav">
                 <li><a href="/about/" style="padding-top:35px;" id="about-text">about</a></li>
-                <li><a href="/discover/" id="discover-text"><i class="fa fa-random" style="margin-right:5px;"></i>discover</a></li>
+                <li><a href="/items/" id="discover-text"><i class="fa fa-random" style="margin-right:5px;"></i>discover</a></li>
                 <li><a href="/search/" id="search-text"><i class="fa fa-search"></i></a></li>
                 <li><a data-toggle="modal" href="#login-or-signup" id="login-text">login or signup</a></li>
               </ul>
@@ -57,6 +61,7 @@
         </div>
         <br><br><br><br>
           <div style="height:840px;padding-top:8px;">
+<<<<<<< HEAD
             <p>testing</p>
             <div id="project-list-container">
               <% for(var i=0; i<1000; i++) {%>
@@ -66,6 +71,9 @@
               <% } %>
             </div>
             <h1 class="cover-heading">sharing is caring</h1>
+=======
+            <h1 class="cover-heading">sharing made easy</h1>
+>>>>>>> cbe43680690a842ac92e51907e2c4117bf3a7b95
 
             <br><br><br>
 
@@ -75,7 +83,7 @@
               <a href="/about/"><button type="button" class="btn btn-primary">learn more</button></a>
             </p>
             <!--<i class="fa fa-circle-thin" style="font-size:64px;"></i>-->
-            <a href="/"><img style="float:center;height:88px;" src="/static/images/white-logo.png"/><h3 class="masthead-brand" style="padding-top:20px;" id="logo-text">shr</h3><h3 id="logo-text" class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
+            <a href="/"><img style="float:center;height:88px;" src="/static/images/white-logo.png"/></a>
             <p class="lead">giving is receiving</p>
 
           </div>
@@ -83,14 +91,15 @@
           <div style="background-color:#FECF5E;padding:20px;">
           	<br><br><br>
           	<div style="float:left;">
-            	<p class="lead" style="color:#2f2e2e;">what some need, some have to give</p>
-          		<p class="lead" style="color:#2f2e2e;">by helping each other, we all grow</p>
-          		<p class="lead" style="color:#2f2e2e;">share items, make groups, fees/p>
+            	<p class="lead" style="color:#2f2e2e;">You have stuff you don’t need.</p>
+          		<p class="lead" style="color:#2f2e2e;">Other people own what you do.</p>
+          		<p class="lead" style="color:#2f2e2e;">We think that connecting and sharing this stuff should be easier.</p>
+              <p class="lead" style="color:#2f2e2e;">We made a website for you to do so. </p>
           	</div>
-          	<img style="float:right" src="/static/images/tree.png"/>
+          	<img id="logo1" style="float:center;height:200px;" src="/static/images/white-logo.png"/>
           	<div style="clear:both;"></div>
-          	<i class="fa fa-circle-thin" style="font-size:256px;"></i>
-              <a href="/discover/"><button type="button" class="btn btn-primary">discover!</button></a>
+          	<!--<i class="fa fa-circle-thin" style="font-size:256px;"></i>-->
+              <a href="/items/"><button type="button" class="btn btn-primary">discover!</button></a>
           	<br><br><br>
           </div>
 
@@ -119,7 +128,7 @@
                 <% for(var i=0; i<10; i++) {%>
                   <div id="project-list-item">
                     <p class="lead" style=""><a href="/project/">project title</a></p>
-                    <img src="/static/images/noimage.png"/>
+                    <img src="/static/images/lawn-mower.jpg"/>
                     <p style="">detail detail detail detail detail</p>
                     <% for(var j=0; j<5; j++) {%>
                       <a href="/project/">tag</a>
@@ -198,7 +207,35 @@
 
       </div>
     </div>
+<script>
+  $(document).ready(function(){
+    $("#logo").rotate({ 
+      bind: 
+      { 
+      mouseover : function() { 
+        $(this).rotate({animateTo:1000})
+      },
+        mouseout : function() { 
+          $(this).rotate({animateTo:0})
+        }
+     } 
+   
+});
 
+        $("#logo1").rotate({ 
+      bind: 
+      { 
+      mouseover : function() { 
+        $(this).rotate({animateTo:200})
+      },
+        mouseout : function() { 
+          $(this).rotate({animateTo:0})
+        }
+     } 
+   
+});
+})
+  </script>
   </body>
 </html>
  

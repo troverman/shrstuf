@@ -26,6 +26,7 @@ a:hover {
   <script src="/static/js/bootstrap.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="ejs_production.js"></script>
+  <script type="text/javascript" src="/static/js/jQueryRotateCompressed.js"></script>
   </head>
 <script>
   var socket = io();
@@ -37,10 +38,12 @@ a:hover {
         <div class="cover-container" style="width:80%">
           <div class="masthead clearfix">
             <div class="inner">
-              <a href="/"><img style="float:left;height:88px;" src="/static/images/white-logo.png"/><h3 class="masthead-brand" style="padding-top:20px;">shr</h3><h3 class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
+              <a href="/"><img id="logo" style="float:left;height:88px;" src="/static/images/white-logo.png"/>
+
+              <h3 class="masthead-brand" style="padding-top:20px;">shr</h3><h3 class="masthead-brand" style="color:rgb(203, 204, 203);padding-top:20px;" >stuf</h3></a>
               <ul class="nav masthead-nav">
-                <li><a href="/about/" style="padding-top:35px;">about</a></li>
-                <li><a href="/discover/"><i class="fa fa-random" style="margin-right:5px;"></i>discover</a></li>
+                <li><a style="color:rgb(255,255,255)" href="/about/" style="padding-top:35px;">about</a></li>
+                <li><a href="/items/"><i class="fa fa-random" style="margin-right:5px;"></i>discover</a></li>
                 <li><a href="/search/"><i class="fa fa-search"></i></a></li>
                 <li><a data-toggle="modal" href="#login-or-signup" id="login-area">login or signup</a></li>
               </ul>
@@ -77,7 +80,7 @@ a:hover {
                       </a>
                     </div>
                      <div id="div-find-stuff-archive" style="display:none">
-                      <a href="/discover/">
+                      <a href="/items/">
                           <p style="font-size:50px;color:rgb(71,188,255)">
                              <font face='OSWALD'>
                                 ARCHIVE
@@ -220,6 +223,22 @@ a:hover {
         <br><br><br><br>
       </div>
     </div>
+  <script>
+  $(document).ready(function(){
+    $("#logo").rotate({ 
+      bind: 
+      { 
+      mouseover : function() { 
+        $(this).rotate({animateTo:200})
+      },
+        mouseout : function() { 
+          $(this).rotate({animateTo:0})
+        }
+     } 
+     
+    });
+  })
+  </script>
 
 
   </body>
