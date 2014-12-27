@@ -32,11 +32,6 @@
     #project-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;background-color:rgb(235,235,235);}
     #project-list-item p{color:rgb(80,80,80);}
     #transparency-div p{color:rgb(80,80,80);}
-    #about-text:hover{color:rgb(255,255,255);}
-    #discover-text:hover{color:rgb(255,255,255);}
-    #search-text:hover{color:rgb(255,255,255);}
-    #login-text:hover{color:rgb(255,255,255);}
-
 </style>
 <div class="navbar navbar-inverse">
   <div class="navbar-header">
@@ -62,146 +57,144 @@
   </div>
 </div>
 <body>
+  <div style="height:840px;padding-top:8px;">
+    <div id="project-list-container">
+      <% for(var i=0; i<32; i++) {%>
+        <div id="project-list-item" style="float:left;">
+          <img style="height:128px;" src="/static/images/noimage.png"/>
+        </div>
+      <% } %>
+    </div>
+    <h1 class="cover-heading">sharing is caring</h1>
+    <br><br><br>
 
-        <br><br><br><br>
-          <div style="height:840px;padding-top:8px;">
-            <div id="project-list-container">
-              <% for(var i=0; i<32; i++) {%>
-                <div id="project-list-item" style="float:left;">
-                  <img style="height:128px;" src="/static/images/noimage.png"/>
-                </div>
-              <% } %>
-            </div>
-            <h1 class="cover-heading">sharing is caring</h1>
-            <br><br><br>
+    <h1 class="cover-heading">what can you share?</h1>
+    <p class="lead">people need stuff. we have a duplicity. not everyone needs a lawn mower.</p>
+    <p class="lead">
+      <a href="/about/"><button type="button" class="btn btn-primary">learn more</button></a>
+    </p>
+    <!--<i class="fa fa-circle-thin" style="font-size:64px;"></i>-->
+    <a href="/"><img style="float:center;height:88px;" src="/static/images/white-logo.png"/></a>
+    <p class="lead">giving is receiving</p>
 
-            <h1 class="cover-heading">what can you share?</h1>
-            <p class="lead">people need stuff. we have a duplicity. not everyone needs a lawn mower.</p>
-            <p class="lead">
-              <a href="/about/"><button type="button" class="btn btn-primary">learn more</button></a>
-            </p>
-            <!--<i class="fa fa-circle-thin" style="font-size:64px;"></i>-->
-            <a href="/"><img style="float:center;height:88px;" src="/static/images/white-logo.png"/></a>
-            <p class="lead">giving is receiving</p>
+  </div>
+  <br><br><br><br>
+  <div style="background-color:#FECF5E;padding:20px;">
+  	<br><br><br>
+  	<div style="float:left;">
+    	<p class="lead" style="color:#2f2e2e;">You have stuff you don’t need.</p>
+  		<p class="lead" style="color:#2f2e2e;">Other people own what you do.</p>
+  		<p class="lead" style="color:#2f2e2e;">We think that connecting and sharing this stuff should be easier.</p>
+      <p class="lead" style="color:#2f2e2e;">We made a website for you to do so. </p>
+  	</div>
+  	<img id="logo1" style="float:center;height:200px;" src="/static/images/white-logo.png"/>
+  	<div style="clear:both;"></div>
+  	<!--<i class="fa fa-circle-thin" style="font-size:256px;"></i>-->
+      <a href="/items/"><button type="button" class="btn btn-primary">discover!</button></a>
+  	<br><br><br>
+  </div>
+
+  <div style="background-color:#2f2e2e;padding:20px;">
+  	<br><br><br><br>
+  	<div style="margin-left:25%;margin-right:25%;">
+  		<br><br>
+    	<h1>what can you share?</h1>
+    	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="giving">
+
+    	<br><br><br>
+
+    	<h1>what do you need?</h1> 
+			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="receiving">
+			<br><br><br>
+		</div>
+		<br><br><br><br>
+	  </div>
+
+	  <div style="background-color:#34495E;padding:20px;">
+  	<br><br><br><br><br><br>
+  	<div style="">
+    	<h1>items</h1><hr>
+      <i class="fa fa-wrench" style="font-size:64px;"></i>
+      <div id="project-list-container">
+        <% for(var i=0; i<10; i++) {%>
+          <div id="project-list-item">
+            <p class="lead" style=""><a href="/project/">project title</a></p>
+            <img src="/static/images/lawn-mower.jpg"/>
+            <p style="">detail detail detail detail detail</p>
+            <% for(var j=0; j<5; j++) {%>
+              <a href="/project/">tag</a>
+            <% } %>
 
           </div>
-          <br><br><br><br>
-          <div style="background-color:#FECF5E;padding:20px;">
-          	<br><br><br>
-          	<div style="float:left;">
-            	<p class="lead" style="color:#2f2e2e;">You have stuff you don’t need.</p>
-          		<p class="lead" style="color:#2f2e2e;">Other people own what you do.</p>
-          		<p class="lead" style="color:#2f2e2e;">We think that connecting and sharing this stuff should be easier.</p>
-              <p class="lead" style="color:#2f2e2e;">We made a website for you to do so. </p>
-          	</div>
-          	<img id="logo1" style="float:center;height:200px;" src="/static/images/white-logo.png"/>
-          	<div style="clear:both;"></div>
-          	<!--<i class="fa fa-circle-thin" style="font-size:256px;"></i>-->
-              <a href="/items/"><button type="button" class="btn btn-primary">discover!</button></a>
-          	<br><br><br>
-          </div>
+        <% } %>
+      </div>
 
-          <div style="background-color:#2f2e2e;padding:20px;">
-          	<br><br><br><br>
-          	<div style="margin-left:25%;margin-right:25%;">
-          		<br><br>
-	          	<h1>what can you share?</h1>
-	          	<input type="email" class="form-control" id="exampleInputEmail1" placeholder="giving">
+     </div>
+     <br><br><br><br><br><br>
+	  </div>
 
-	          	<br><br><br>
+	  <div style="background-color:rgb(230, 230, 230);padding:20px;">
+  	<br><br><br><br>
+  	<div id="transparency-div" style="margin-left:25%;margin-right:25%;">
+      <h1><a herf="/transparency/" style="color:rgb(20,20,20)"><i style="font-size:64px" class="fa fa-search"></i> transparency</a></h1>
+      <i class="fa fa-area-chart" style="font-size:64px;"></i>
+      <i class="fa fa-pie-chart" style="font-size:64px;"></i>
+      <p class="lead">graphs and such. raw data. member data. open network.</p>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>"#"</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Payment</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% for (var i = 0; i<10; i++) { %>
+          <tr>
+            <td><%= i %></td>
+            <td>trevor</td>
+            <td>some guy</td>
+            <td>$<%= i %></td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
 
-	          	<h1>what do you need?</h1> 
-      				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="receiving">
-      				<br><br><br>
-      			</div>
-      			<br><br><br><br>
-       	  </div>
-
-       	  <div style="background-color:#34495E;padding:20px;">
-          	<br><br><br><br><br><br>
-          	<div style="">
-	          	<h1>items</h1><hr>
-				      <i class="fa fa-wrench" style="font-size:64px;"></i>
-              <div id="project-list-container">
-                <% for(var i=0; i<10; i++) {%>
-                  <div id="project-list-item">
-                    <p class="lead" style=""><a href="/project/">project title</a></p>
-                    <img src="/static/images/lawn-mower.jpg"/>
-                    <p style="">detail detail detail detail detail</p>
-                    <% for(var j=0; j<5; j++) {%>
-                      <a href="/project/">tag</a>
-                    <% } %>
-
-                  </div>
-                <% } %>
-              </div>
-
-			       </div>
-			       <br><br><br><br><br><br>
-       	  </div>
-
-       	  <div style="background-color:rgb(230, 230, 230);padding:20px;">
-          	<br><br><br><br>
-          	<div id="transparency-div" style="margin-left:25%;margin-right:25%;">
-				      <h1><a herf="/transparency/" style="color:rgb(20,20,20)"><i style="font-size:64px" class="fa fa-search"></i> transparency</a></h1>
-				      <i class="fa fa-area-chart" style="font-size:64px;"></i>
-				      <i class="fa fa-pie-chart" style="font-size:64px;"></i>
-              <p class="lead">graphs and such. raw data. member data. open network.</p>
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                      <th>"#"</th>
-                      <th>From</th>
-                      <th>To</th>
-                      <th>Payment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <% for (var i = 0; i<10; i++) { %>
-                  <tr>
-                    <td><%= i %></td>
-                    <td>trevor</td>
-                    <td>some guy</td>
-                    <td>$<%= i %></td>
-                  </tr>
-                <% } %>
-                </tbody>
-              </table>
-
-			     </div>
-			     <br><br><br><br>
-       	  </div>
+   </div>
+   <br><br><br><br>
+	  </div>
 
 
-       	  <div style="background-color:#34495E;padding:20px;">
-          	<br><br><br><br>
-          	<div style="margin-left:25%;margin-right:25%;">
-	          	<h1>giving is receiving</h1>
-            </div>
-			     <br><br><br><br>
-       	  </div>
+	  <div style="background-color:#34495E;padding:20px;">
+  	<br><br><br><br>
+  	<div style="margin-left:25%;margin-right:25%;">
+    	<h1>giving is receiving</h1>
+    </div>
+   <br><br><br><br>
+	  </div>
 
-       	  <div style="background-color:#2f2e2e;padding:20px;">
-          	<br><br><br><br>
-          	<div style="margin-left:25%;margin-right:25%;text-align:center;">
-	          	<i style="font-size:256px;" class="fa fa-heart"></i>
-              <br><br><br><br><br>
+	  <div style="background-color:#2f2e2e;padding:20px;">
+  	<br><br><br><br>
+  	<div style="margin-left:25%;margin-right:25%;text-align:center;">
+    	<i style="font-size:256px;" class="fa fa-heart"></i>
+      <br><br><br><br><br>
 
-              <a><button type="button" class="btn btn-primary">share <i style="fa fa-circle-thin"></i></button></a>
-              <input style="width:50%;float:left;" type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
-              <input style="width:50%;float:left;" type="email" class="form-control" id="exampleInputEmail1" placeholder="password">
+      <a><button type="button" class="btn btn-primary">share <i style="fa fa-circle-thin"></i></button></a>
+      <input style="width:50%;float:left;" type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
+      <input style="width:50%;float:left;" type="email" class="form-control" id="exampleInputEmail1" placeholder="password">
 
-              <a hre="/project/givingfor/"><button type="button" class="btn btn-primary">donate <i style="fa fa-circle-thin"></i></button></a>
-              <p>donation progress</p>
+      <a hre="/project/givingfor/"><button type="button" class="btn btn-primary">donate <i style="fa fa-circle-thin"></i></button></a>
+      <p>donation progress</p>
 
 
-              <div class="progress progress-striped active">
-                <div class="bar" style="width: 40%;"></div>
-              </div>
+      <div class="progress progress-striped active">
+        <div class="bar" style="width: 40%;"></div>
+      </div>
 
-			     </div>
-			     <br><br><br><br>
-       	  </div>
+   </div>
+   <br><br><br><br>
+	  </div>
 
 <script>
   $(document).ready(function(){
