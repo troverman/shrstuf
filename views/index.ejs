@@ -39,7 +39,29 @@
   #project-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;background-color:rgb(235,235,235);}
   #project-list-item p{color:rgb(80,80,80);}
   #transparency-div p{color:rgb(80,80,80);}
+
+  .blink {
+    animation: blink 1s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+
+
 </style>
+
+
+
+
+
 <div class="navbar navbar-inverse">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -70,6 +92,7 @@
     <div id="top-container">
       <div id="form-overlay">
         <div style="padding:20px;background-color:rgba(100,100,100,.5)">
+          This is <span class="blink">blinking</span> text.
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="giving">
         </div>
       </div>
